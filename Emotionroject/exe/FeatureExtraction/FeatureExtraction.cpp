@@ -462,13 +462,7 @@ int main(int argc, char **argv)
 		vector<uchar> videoBuffer;                                                     // Буфер данных изображения
 		Mat jpegimage;                                                                       // Вектор данных изображения
 		IplImage img;
-		
-		////////////
-		//while (!done) // this is not a for loop as we might also be reading from a webcam
-		//{
-			////////////
-			
-			///////////
+
 			string current_file;
 
 			cv::VideoCapture video_capture;
@@ -479,148 +473,14 @@ int main(int argc, char **argv)
 
 			double fps_vid_in = -1.0;
 
-		/*	if (video_input)
-			{
-				// We might specify multiple video files as arguments
-				if (input_files.size() > 0)
-				{
-					f_n++;
-					current_file = input_files[f_n];
-				}
-				else
-				{
-					// If we want to write out from webcam
-					f_n = 0;
-				}
-				// Do some grabbing
-				if (current_file.size() > 0)
-				{
-					std::cout << "Number1_1\n";
-					INFO_STREAM("Attempting to read from file: " << current_file);
-					video_capture = cv::VideoCapture(current_file);
-					total_frames = (int)video_capture.get(CV_CAP_PROP_FRAME_COUNT);
-					fps_vid_in = video_capture.get(CV_CAP_PROP_FPS);
-
-					// Check if fps is nan or less than 0
-					if (fps_vid_in != fps_vid_in || fps_vid_in <= 0)
-					{
-						std::cout << "Number2\n";
-						INFO_STREAM("FPS of the video file cannot be determined, assuming 30");
-						fps_vid_in = 30;
-					}
-				}
-
-				if (!video_capture.isOpened())
-				{
-					INFO_STREAM("WEB");
-					//FATAL_STREAM("Failed to open video source, exiting");
-					//return 1;
-					// By default try webcam
-				/*	int device = 0;
-					cv::VideoCapture vCap;
-					//INFO_STREAM("Attempting to capture from device: " << device);
-					vCap = cv::VideoCapture(device);
-					video_capture = vCap;
-				//	video_capture >> captured_image;
-					
-
-					/////////////
-
-					//while ((iResult = recv(acc, (char *)&buf[0], MAX_BUF_SIZE, 0)) > 0)
-					iResult = recv(acc, (char *)&buf[0], MAX_BUF_SIZE, 0);
-						//if (iResult > 0) {
-					//{
-						std::cout << "Number20\n";
-						// Если пришли данные изображения, копируем их
-						videoBuffer.resize(iResult);
-						memcpy((char*)(&videoBuffer[0]), buf, iResult);
-						// Декодируем данные
-						jpegimage = imdecode(Mat(videoBuffer), CV_LOAD_IMAGE_COLOR);
-						img = jpegimage;
-
-
-						// Выводим изображение
-					//	imshow("ejnsdfnmdf", jpegimage);
-						//cvShowImage("Recieved Video", &img);
-						// Ожидаем отклика управления (произвольно 5 ms)
-						//cvWaitKey(5);
-						//captured_image = jpegimage;
-					//}
-						//captured_image = jpegimage;
-				}
-						////////////
-
-				else
-				{
-					std::cout << "Number3\n";
-					INFO_STREAM("Device or file opened");
-				}
-				captured_image = jpegimage;
-				//video_capture >> captured_image;
-					}
-				else
-				{
-					std::cout << "Number1\n";
-					f_n++;
-					curr_img++;
-					if (!input_image_files[f_n].empty())
-					{
-						string curr_img_file = input_image_files[f_n][curr_img];
-						captured_image = cv::imread(curr_img_file, -1);
-					}
-					else
-					{
-						std::cout << "Number4\n";
-						FATAL_STREAM("No .jpg or .png images in a specified drectory, exiting");
-						return 1;
-					}
-
-				}
-				*/
-				// If optical centers are not defined just use center of image
-			/*	if (cx_undefined)
-				{
-					std::cout << "Number5\n";
-					cx = captured_image.cols / 2.0f;
-					cy = captured_image.rows / 2.0f;
-				}
-				// Use a rough guess-timate of focal length
-				if (fx_undefined)
-				{
-					std::cout << "Number6\n";
-					fx = 500 * (captured_image.cols / 640.0);
-					fy = 500 * (captured_image.rows / 480.0);
-
-					fx = (fx + fy) / 2.0;
-					fy = fx;
-				}
-				*/
+	
 				// Creating output files
 				std::ofstream output_file;
 
-				/*if (!output_files.empty())
-				{
-					std::cout << "Number7\n";
-					output_file.open(output_files[f_n], ios_base::out);
-					prepareOutputFile(&output_file, output_2D_landmarks, output_3D_landmarks, output_model_params, output_pose, output_AUs, output_gaze, face_model.pdm.NumberOfPoints(), face_model.pdm.NumberOfModes(), face_analyser.GetAUClassNames(), face_analyser.GetAURegNames());
-				}
-				*/
+	
 				// Saving the HOG features
 				std::ofstream hog_output_file;
-				/*if (!output_hog_align_files.empty())
-				{
-					std::cout << "Number8\n";
-					hog_output_file.open(output_hog_align_files[f_n], ios_base::out | ios_base::binary);
-				}
-
-				// saving the videos
-				cv::VideoWriter writerFace;
-				if (!tracked_videos_output.empty())
-				{
-					std::cout << "Number9\n";
-					writerFace = cv::VideoWriter(tracked_videos_output[f_n], CV_FOURCC('D', 'I', 'V', 'X'), fps_vid_in, captured_image.size(), true);
-				}
-				*/
+				
 				int frame_count = 0;
 
 				// This is useful for a second pass run (if want AU predictions)
@@ -636,7 +496,7 @@ int main(int argc, char **argv)
 
 				// Timestamp in seconds of current processing
 				double time_stamp = 0;
-				//vector<string> vv = {" "," "," "," "};
+			
 				vector<string> vv;
 				int ii = 0;
 				string st1, st2, st3, st4;
@@ -655,11 +515,10 @@ int main(int argc, char **argv)
 					prepareOutputFile(&output_file, output_2D_landmarks, output_3D_landmarks, output_model_params, output_pose, output_AUs, output_gaze, face_model.pdm.NumberOfPoints(), face_model.pdm.NumberOfModes(), face_analyser.GetAUClassNames(), face_analyser.GetAURegNames());
 				}
 
-			//	while (!captured_image.empty())
-			//	{
+		
 				
 				while (((iResult = recv(acc, (char *)&buf[0], MAX_BUF_SIZE, 0)) > 0) && (done = true))
-						//if (iResult > 0) {
+					
 					{
 						std::cout << "Number2\n";
 						// Если пришли данные изображения, копируем их
@@ -671,22 +530,18 @@ int main(int argc, char **argv)
 
 
 						// Выводим изображение
-					//	imshow("ejnsdfnmdf", jpegimage);
-						//cvShowImage("Recieved Video", &img);
-						// Ожидаем отклика управления (произвольно 5 ms)
-					//	cvWaitKey(5);
+					
 						captured_image = jpegimage;
 
-						//////////
+			
 						char c = cvWaitKey(10); //Ждем нажатия кнопки и записываем нажатую кнопку в переменную с.
 						if (c == 113 || c == 81) //Проверяем, какая кнопка нажата. 113 и 81 - это коды кнопки "q" - в английской и русской раскладках. 
 						{
 							done = false;
-							//cvReleaseCapture(captured_image); //корретно освобождаем память и уничтожаем созданные обьекты.
-							//cvDestroyWindow("tracking"); //я тебя породил, я тебя и убью!
+						
 							return 0;  //выходит из программы. 
 						}
-						/////////
+					
 					std::cout << "Number10\n";
 
 					std::cout << "Number5\n";
@@ -702,16 +557,7 @@ int main(int argc, char **argv)
 
 					std::cout << "Number100\n";
 					// Grab the timestamp first
-				/*	if (video_input)
-					{
-						time_stamp = (double)frame_count * (1.0 / fps_vid_in);
-					}
-					else
-					{
-						// if loading images assume 30fps
-						time_stamp = (double)frame_count * (1.0 / 30.0);
-					}
-					*/
+			
 					time_stamp = (double)frame_count * (1.0 / 30.0);
 					// Reading the images
 					cv::Mat_<uchar> grayscale_image;
@@ -728,15 +574,7 @@ int main(int argc, char **argv)
 					// The actual facial landmark detection / tracking
 					bool detection_success;
 
-					/*if (video_input || images_as_video)
-					{
-						detection_success = LandmarkDetector::DetectLandmarksInVideo(grayscale_image, face_model, det_parameters);
-					}
-					else
-					{
-						detection_success = LandmarkDetector::DetectLandmarksInImage(grayscale_image, face_model, det_parameters);
-					}
-					*/
+					
 					detection_success = LandmarkDetector::DetectLandmarksInVideo(grayscale_image, face_model, det_parameters);
 					// Gaze tracking, absolute gaze direction
 
@@ -763,7 +601,7 @@ int main(int argc, char **argv)
 						//outputAllF(face_analyser, captured_image, vv);
 						if (!det_parameters.quiet_mode)
 						{
-							//cv::imshow("sim_warp", sim_warped_img);
+							
 						}
 						if (hog_output_file.is_open())
 						{
@@ -773,7 +611,7 @@ int main(int argc, char **argv)
 							{
 								cv::Mat_<double> hog_descriptor_vis;
 								FaceAnalysis::Visualise_FHOG(hog_descriptor, num_hog_rows, num_hog_cols, hog_descriptor_vis);
-								//cv::imshow("hog", hog_descriptor_vis);
+								
 							}
 						}
 					}
@@ -823,21 +661,18 @@ int main(int argc, char **argv)
 						}
 					}
 
-					// Visualising the tracker
-					//visualise_tracking(captured_image, face_model, det_parameters, gazeDirection0, gazeDirection1, frame_count, fx, fy, cx, cy);
-					//vector<string> vv;
+					
 					// Output the landmarks, pose, gaze, parameters and AUs
 					outputAllFeatures(&output_file, output_2D_landmarks, output_3D_landmarks, output_model_params, output_pose, output_AUs, output_gaze,
 						face_model, frame_count, time_stamp, detection_success, gazeDirection0, gazeDirection1,
 						pose_estimate, fx, fy, cx, cy, face_analyser, captured_image, vv);
 
 
-					//vector<string> vv;
-					//outputAllF(face_analyser, captured_image, vv);
+					
 
 					// Work out the framerate
 					if (frame_count % 5 == 0) {
-						//	ii++;
+						
 						st1 = vv[vv.size() - 1];
 						st2 = vv[vv.size() - 2];
 						st3 = vv[vv.size() - 3];
@@ -915,10 +750,6 @@ int main(int argc, char **argv)
 					cv::namedWindow("server_camera", 1);
 					cv::imshow("server_camera", captured_image);
 
-
-					///////////////
-		
-					/////////////
 
 					// output the tracked video
 					if (!tracked_videos_output.empty())
@@ -1008,8 +839,7 @@ int main(int argc, char **argv)
 					putText(image, "disgust", Point(750, 800), FONT_HERSHEY_COMPLEX_SMALL, 1, Scalar(0, 200, 200), 1);
 					putText(image, "anger", Point(900, 800), FONT_HERSHEY_COMPLEX_SMALL, 1, Scalar(0, 200, 200), 1);
 
-					//rectangle(image, Point(15, 20), Point(70, 50), Scalar(0, 55, 255), +1, 4);
-					//putText(image, "Hi all...", Point(50, 100), FONT_HERSHEY_SIMPLEX, 1, Scalar(0, 200, 200), 4);
+					
 					imshow("Emotion", image);
 					////////////////
 					if (total_frames != -1)
@@ -1182,7 +1012,7 @@ void post_process_output_file(FaceAnalysis::FaceAnalyser& face_analyser, string 
 		}
 
 		vector<double> e1, e2, e3, e4, e5, e6;
-		//e1[0]=(aa[0]*aa[17]+aa[1]*aa[18]+aa[3]*aa[20]+)
+		
 		double AU01_c = aa[0], AU02_c = aa[1], AU04_c = aa[2], AU05_c = aa[3], AU06_c = aa[4], AU07_c = aa[5], AU09_c = aa[6],
 			AU10_c = aa[7], AU12_c = aa[8], AU14_c = aa[9], AU15_c = aa[10], AU17_c = aa[11], AU20_c = aa[12], AU23_c = aa[13],
 			AU25_c = aa[14], AU26_c = aa[15], AU45_c = aa[16];
@@ -1192,107 +1022,88 @@ void post_process_output_file(FaceAnalysis::FaceAnalyser& face_analyser, string 
 
 		//удивление
 		e1.push_back((AU01_c*AU01_r + AU02_c*AU02_r + AU05_c*AU05_r + AU26_c*AU26_r) / 4);
-		//E(i, 2) = (AU01_c(i)*AU01_r(i) + AU02_c(i)*AU02_r(i) + AU05_c(i)*AU05_r(i) + AU27_c(i)*AU27_r(i)) / 4;
+		
 		e1.push_back((AU01_c*AU01_r + AU02_c*AU02_r + AU05_c*AU05_r) / 3);
 		e1.push_back((AU01_c*AU01_r + AU02_c*AU02_r + AU26_c*AU26_r) / 3);
-		//%E(i, 5) = (AU01_c(i)*AU01_r(i) + AU02_c(i)*AU02_r(i) + AU27_c(i)*AU27_r(i)) / 3;
+		
 		e1.push_back((AU05_c*AU05_r + AU26_c*AU26_r) / 2);
-		//%E1(i, 7) = (AU26_c(i)*AU26_r(i));
+		
 
 
 		//%страх
-		//%E2(i, 8) = (AU01_c(i)*AU01_r(i) + AU02_c(i)*AU02_r(i) + AU04_c(i)*AU04_r(i) + AU05_c(i)*AU05_r(i) + AU20_c(i)*AU20_r(i) + AU25_c(i)*AU25_r(i) + AU26_c(i)*AU26_r(i)) / 7;
-		//%E(i, 9) = (AU01_c(i)*AU01_r(i) + AU02_c(i)*AU02_r(i) + AU04_c(i)*AU04_r(i) + AU05_c(i)*AU05_r(i) + AU20_c(i)*AU20_r(i) + AU25_c(i)*AU25_r(i) + AU27_c(i)*AU27_r(i)) / 7;
+		
 		e2.push_back((AU01_c*AU01_r + AU02_c*AU02_r + AU04_c*AU04_r + AU05_c*AU05_r + AU25_c*AU25_r + AU26_c*AU26_r) / 6);
-		//%E(i, 11) = (AU01_c(i)*AU01_r(i) + AU02_c(i)*AU02_r(i) + AU04_c(i)*AU04_r(i) + AU05_c(i)*AU05_r(i) + AU25_c(i)*AU25_r(i) + AU27_c(i)*AU27_r(i)) / 6;
+		
 		e2.push_back((AU01_c*AU01_r + AU02_c*AU02_r + AU04_c*AU04_r + AU05_c*AU05_r) / 4);
 		e2.push_back((AU01_c*AU01_r + AU02_c*AU02_r + AU05_c*AU05_r + AU25_c*AU25_r) / 4);
 		e2.push_back((AU01_c*AU01_r + AU02_c*AU02_r + AU05_c*AU05_r + AU25_c*AU25_r + AU26_c*AU26_r) / 5);
-		//%E(i, 15) = (AU01_c(i)*AU01_r(i) + AU02_c(i)*AU02_r(i) + AU05_c(i)*AU05_r(i) + AU25_c(i)*AU25_r(i) + AU26_c(i)*AU26_r(i) + AU27_c(i)*AU27_r(i)) / 6;
+		
 		e2.push_back((AU01_c*AU01_r + AU02_c*AU02_r + AU05_c*AU05_r + AU26_c*AU26_r) / 4);
-		//%E(i, 17) = (AU01_c(i)*AU01_r(i) + AU02_c(i)*AU02_r(i) + AU05_c(i)*AU05_r(i) + AU27_c(i)*AU27_r(i)) / 4;
+		
 		e2.push_back((AU01_c*AU01_r + AU02_c*AU02_r + AU05_c*AU05_r) / 3);
 		e2.push_back((AU05_c*AU05_r + AU20_c*AU20_r + AU25_c*AU25_r) / 3);
 		e2.push_back((AU05_c*AU05_r + AU20_c*AU20_r + AU25_c*AU25_r + AU26_c*AU26_r) / 4);
-		//%E(i, 21) = (AU05_c(i)*AU05_r(i) + AU20_c(i)*AU20_r(i) + AU25_c(i)*AU25_r(i) + AU26_c(i)*AU26_r(i) + AU27_c(i)*AU27_r(i)) / 5;
+
 		e2.push_back((AU05_c*AU05_r + AU20_c*AU20_r + AU26_c*AU26_r) / 3);
-		//%E(i, 23) = (AU05_c(i)*AU05_r(i) + AU20_c(i)*AU20_r(i) + AU27_c(i)*AU27_r(i)) / 3;
+		
 		e2.push_back((AU05_c*AU05_r + AU20_c*AU20_r) / 2);
 		//%радость
 		e3.push_back((AU06_c*AU06_r + AU12_c*AU12_r) / 2);
 		e3.push_back((AU12_c*AU12_r));
 		//%ечаль
-		//%E(i, 27) = (AU01_c(i)*AU01_r(i) + AU04_c(i)*AU04_r(i) + AU11_c(i)*AU11_r(i) + AU15_c(i)*AU15_r(i)) / 4;
+		
 		e4.push_back((AU01_c*AU01_r + AU04_c*AU04_r + AU15_c*AU15_r) / 3);
 		e4.push_back((AU06_c*AU06_r + AU15_c*AU15_r) / 2);
-		//%E(i, 30) = (AU01_c(i)*AU01_r(i) + AU04_c(i)*AU04_r(i) + AU11_c(i)*AU11_r(i)) / 3;
+	
 		e4.push_back((AU01_c*AU01_r + AU04_c*AU04_r + AU15_c*AU15_r + AU17_c*AU17_r) / 4);
-		//%E(i, 32) = (AU15_c(i)*AU15_r(i));
-		//%E(i, 33) = (AU11_c(i)*AU11_r(i) + AU17_c(i)*AU17_r(i)) / 2;
+	
 		//%отвращение
 		e5.push_back((AU09_c*AU09_r));
-		//%E(i, 35) = (AU09_c(i)*AU09_r(i) + AU16_c(i)*AU16_r(i) + AU15_c(i)*AU15_r(i)) / 3;
-		//%E(i, 36) = (AU09_c(i)*AU09_r(i) + AU16_c(i)*AU16_r(i) + AU26_c(i)*AU26_r(i)) / 3;
+
 		e5.push_back((AU09_c*AU09_r + AU17_c*AU17_r) / 2);
 		e5.push_back((AU10_c*AU10_r));
-		//%E(i, 39) = (AU10_c(i)*AU10_r(i) + AU16_c(i)*AU16_r(i) + AU25_c(i)*AU25_r(i)) / 3;
-		//%E(i, 40) = (AU10_c(i)*AU10_r(i) + AU16_c(i)*AU16_r(i) + AU26_c(i)*AU26_r(i)) / 3;
+
 		e5.push_back((AU10_c*AU10_r + AU17_c*AU17_r) / 2);
 		//%гнев
-		//%E(i, 42) = (AU04_c(i)*AU04_r(i) + AU05_c(i)*AU05_r(i) + AU07_c(i)*AU07_r(i) + AU10_c(i)*AU10_r(i) + AU22_c(i)*AU22_r(i) + AU23_c(i)*AU23_r(i) + AU25_c(i)*AU25_r(i)) / 7;
-		//%E(i, 43) = (AU04_c(i)*AU04_r(i) + AU05_c(i)*AU05_r(i) + AU07_c(i)*AU07_r(i) + AU10_c(i)*AU10_r(i) + AU22_c(i)*AU22_r(i) + AU23_c(i)*AU23_r(i) + AU26_c(i)*AU26_r(i)) / 7;
+		
 		e6.push_back((AU04_c*AU04_r + AU05_c*AU05_r + AU07_c*AU07_r + AU10_c*AU10_r + AU23_c*AU23_r + AU25_c*AU25_r) / 6);
 		e6.push_back((AU04_c*AU04_r + AU05_c*AU05_r + AU07_c*AU07_r + AU10_c*AU10_r + AU23_c*AU23_r + AU26_c*AU26_r) / 6);
 		e6.push_back((AU04_c*AU04_r + AU05_c*AU05_r + AU07_c*AU07_r + AU23_c*AU23_r + AU25_c*AU25_r) / 5);
 		e6.push_back((AU04_c*AU04_r + AU05_c*AU05_r + AU07_c*AU07_r + AU23_c*AU23_r + AU26_c*AU26_r) / 5);
 		e6.push_back((AU04_c*AU04_r + AU05_c*AU05_r + AU07_c*AU07_r + AU17_c*AU17_r + AU23_c*AU23_r) / 5);
-		//%E(i, 49) = (AU04_c(i)*AU04_r(i) + AU05_c(i)*AU05_r(i) + AU07_c(i)*AU07_r(i) + AU17_c(i)*AU17_r(i) + AU24_c(i)*AU24_r(i)) / 5;
+		
 		e6.push_back((AU04_c*AU04_r + AU05_c*AU05_r + AU07_c*AU07_r + AU23_c*AU23_r) / 4);
-		//%E(i, 51) = (AU04_c(i)*AU04_r(i) + AU05_c(i)*AU05_r(i) + AU07_c(i)*AU07_r(i) + AU24_c(i)*AU24_r(i)) / 4;
-
-		//%E(i, 52) = (AU05_c(i)*AU05_r(i) + AU07_c(i)*AU07_r(i) + AU10_c(i)*AU10_r(i) + AU22_c(i)*AU22_r(i) + AU23_c(i)*AU23_r(i) + AU25_c(i)*AU25_r(i)) / 6;
-		//%E(i, 53) = (AU05_c(i)*AU05_r(i) + AU07_c(i)*AU07_r(i) + AU10_c(i)*AU10_r(i) + AU22_c(i)*AU22_r(i) + AU23_c(i)*AU23_r(i) + AU26_c(i)*AU26_r(i)) / 6;
+		
 		e6.push_back((AU05_c*AU05_r + AU07_c*AU07_r + AU10_c*AU10_r + AU23_c*AU23_r + AU25_c*AU25_r) / 5);
 		e6.push_back((AU05_c*AU05_r + AU07_c*AU07_r + AU10_c*AU10_r + AU23_c*AU23_r + AU26_c*AU26_r) / 5);
 		e6.push_back((AU05_c*AU05_r + AU07_c*AU07_r + AU23_c*AU23_r + AU25_c*AU25_r) / 4);
 		e6.push_back((AU05_c*AU05_r + AU07_c*AU07_r + AU23_c*AU23_r + AU26_c*AU26_r) / 4);
 		e6.push_back((AU05_c*AU05_r + AU07_c*AU07_r + AU17_c*AU17_r + AU23_c*AU23_r) / 4);
-		//%E(i, 59) = (AU05_c(i)*AU05_r(i) + AU07_c(i)*AU07_r(i) + AU17_c(i)*AU17_r(i) + AU24_c(i)*AU24_r(i)) / 4;
+		
 		e6.push_back((AU05_c*AU05_r + AU07_c*AU07_r + AU23_c*AU23_r) / 3);
-		//%E(i, 61) = (AU05_c(i)*AU05_r(i) + AU07_c(i)*AU07_r(i) + AU24_c(i)*AU24_r(i)) / 3;
-
-		//%E(i, 62) = (AU04_c(i)*AU04_r(i) + AU07_c(i)*AU07_r(i) + AU10_c(i)*AU10_r(i) + AU22_c(i)*AU22_r(i) + AU23_c(i)*AU23_r(i) + AU25_c(i)*AU25_r(i)) / 6;
-		//%E(i, 63) = (AU04_c(i)*AU04_r(i) + AU07_c(i)*AU07_r(i) + AU10_c(i)*AU10_r(i) + AU22_c(i)*AU22_r(i) + AU23_c(i)*AU23_r(i) + AU26_c(i)*AU26_r(i)) / 6;
+		
 		e6.push_back((AU04_c*AU04_r + AU07_c*AU07_r + AU10_c*AU10_r + AU23_c*AU23_r + AU25_c*AU25_r) / 5);
 		e6.push_back((AU04_c*AU04_r + AU07_c*AU07_r + AU10_c*AU10_r + AU23_c*AU23_r + AU26_c*AU26_r) / 5);
 		e6.push_back((AU04_c*AU04_r + AU07_c*AU07_r + AU23_c*AU23_r + AU25_c*AU25_r) / 4);
 		e6.push_back((AU04_c*AU04_r + AU07_c*AU07_r + AU23_c*AU23_r + AU26_c*AU26_r) / 4);
 		e6.push_back((AU04_c*AU04_r + AU07_c*AU07_r + AU17_c*AU17_r + AU23_c*AU23_r) / 4);
-		//%E(i, 69) = (AU04_c(i)*AU04_r(i) + AU07_c(i)*AU07_r(i) + AU17_c(i)*AU17_r(i) + AU24_c(i)*AU24_r(i)) / 4;
+	
 		e6.push_back((AU04_c*AU04_r + AU07_c*AU07_r + AU23_c*AU23_r) / 3);
-		//%E(i, 71) = (AU04_c(i)*AU04_r(i) + AU07_c(i)*AU07_r(i) + AU24_c(i)*AU24_r(i)) / 3;
-
-		//%E(i, 72) = (AU04_c(i)*AU04_r(i) + AU05_c(i)*AU05_r(i) + AU10_c(i)*AU10_r(i) + AU22_c(i)*AU22_r(i) + AU23_c(i)*AU23_r(i) + AU25_c(i)*AU25_r(i)) / 6;
-		//%E(i, 73) = (AU04_c(i)*AU04_r(i) + AU05_c(i)*AU05_r(i) + AU10_c(i)*AU10_r(i) + AU22_c(i)*AU22_r(i) + AU23_c(i)*AU23_r(i) + AU26_c(i)*AU26_r(i)) / 6;
+		
 		e6.push_back((AU04_c*AU04_r + AU05_c*AU05_r + AU10_c*AU10_r + AU23_c*AU23_r + AU25_c*AU25_r) / 5);
 		e6.push_back((AU04_c*AU04_r + AU05_c*AU05_r + AU10_c*AU10_r + AU23_c*AU23_r + AU26_c*AU26_r) / 5);
 		e6.push_back((AU04_c*AU04_r + AU05_c*AU05_r + AU23_c*AU23_r + AU25_c*AU25_r) / 4);
 		e6.push_back((AU04_c*AU04_r + AU05_c*AU05_r + AU23_c*AU23_r + AU26_c*AU26_r) / 4);
 		e6.push_back((AU04_c*AU04_r + AU05_c*AU05_r + AU17_c*AU17_r + AU23_c*AU23_r) / 4);
-		//%E(i, 79) = (AU04_c(i)*AU04_r(i) + AU05_c(i)*AU05_r(i) + AU17_c(i)*AU17_r(i) + AU24_c(i)*AU24_r(i)) / 4;
+		
 		e6.push_back((AU04_c*AU04_r + AU05_c*AU05_r + AU23_c*AU23_r) / 3);
-		//%E(i, 81) = (AU04_c(i)*AU04_r(i) + AU05_c(i)*AU05_r(i) + AU24_c(i)*AU24_r(i)) / 3;
+		
 
-		//%E(i, 82) = (AU04_c(i)*AU04_r(i) + AU05_c(i)*AU05_r(i) + AU07_c(i)*AU07_r(i) + AU22_c(i)*AU22_r(i) + AU23_c(i)*AU23_r(i) + AU25_c(i)*AU25_r(i)) / 6;
-		//%E(i, 83) = (AU04_c(i)*AU04_r(i) + AU05_c(i)*AU05_r(i) + AU07_c(i)*AU07_r(i) + AU22_c(i)*AU22_r(i) + AU23_c(i)*AU23_r(i) + AU26_c(i)*AU26_r(i)) / 6;
+		
 		e6.push_back((AU04_c*AU04_r + AU05_c*AU05_r + AU07_c*AU07_r + AU23_c*AU23_r + AU25_c*AU25_r) / 5);
 		e6.push_back((AU04_c*AU04_r + AU05_c*AU05_r + AU07_c*AU07_r + AU23_c*AU23_r + AU26_c*AU26_r) / 5);
 
-		/*std::vector<int>::iterator r1;
-		r1 = std::max_element(e1.begin(), e1.end());
-		std::cout << "max element at: " << std::distance(e1.begin(), r1) << '\n';
-		//std::cout << r1 << std::endl;
-		*/
+	
 
 
 
@@ -1340,8 +1151,6 @@ void post_process_output_file(FaceAnalysis::FaceAnalyser& face_analyser, string 
 
 		double a = em[r];
 
-		//std::cout << "max element at: " << r << '\n';
-		//std::cout << "max element: " << a << '\n';
 		double sum_of_elems = std::accumulate(em.begin(), em.end(), 0);
 
 		string strr, strr2;
@@ -1353,7 +1162,7 @@ void post_process_output_file(FaceAnalysis::FaceAnalyser& face_analyser, string 
 
 		}
 
-		//double s = (a / sum_of_elems)*100;
+	
 		else
 		{
 
@@ -1387,15 +1196,7 @@ void post_process_output_file(FaceAnalysis::FaceAnalyser& face_analyser, string 
 				outfile << " " << "anger";
 				strr = "anger";
 			}
-			/*	cv::putText(captured_image,
-			strr,
-			cv::Point(20, 20), // Coordinates
-			cv::FONT_HERSHEY_COMPLEX_SMALL, // Font
-			1.0, // Scale. 2.0 = 2x bigger
-			cv::Scalar(255, 255, 255), // Color
-			1, // Thickness
-			CV_AA);
-			*/
+	
 			em[r] = 0;
 			std::vector<double>::iterator result7;
 			result7 = std::max_element(em.begin(), em.end());
@@ -1437,15 +1238,7 @@ void post_process_output_file(FaceAnalysis::FaceAnalyser& face_analyser, string 
 			double z2 = (a2 / sum) * 100;
 			outfile << " " << z1 << "%";
 			outfile << " " << z2 << "%";
-			/*cv::putText(captured_image,
-			"TEEEEEEEEEEEEEEEXT",
-			cv::Point(5, 5), // Coordinates
-			cv::FONT_HERSHEY_COMPLEX_SMALL, // Font
-			1.0, // Scale. 2.0 = 2x bigger
-			cv::Scalar(255, 255, 255), // Color
-			1, // Thickness
-			CV_AA);
-			*/
+	
 
 		}
 		aa.clear();
@@ -1686,9 +1479,9 @@ void outputAllFeatures(std::ofstream* output_file, bool output_2D_landmarks, boo
 		}
 	}
 
-	/////////////////////////
+
 	vector<double> e1, e2, e3, e4, e5, e6;
-	//e1[0]=(aa[0]*aa[17]+aa[1]*aa[18]+aa[3]*aa[20]+)
+
 	double AU01_c = aa[0], AU02_c = aa[1], AU04_c = aa[2], AU05_c = aa[3], AU06_c = aa[4], AU07_c = aa[5], AU09_c = aa[6],
 		AU10_c = aa[7], AU12_c = aa[8], AU14_c = aa[9], AU15_c = aa[10], AU17_c = aa[11], AU20_c = aa[12], AU23_c = aa[13],
 		AU25_c = aa[14], AU26_c = aa[15], AU45_c = aa[16];
@@ -1698,107 +1491,89 @@ void outputAllFeatures(std::ofstream* output_file, bool output_2D_landmarks, boo
 
 	//удивление
 	e1.push_back((AU01_c*AU01_r + AU02_c*AU02_r + AU05_c*AU05_r + AU26_c*AU26_r) / 4);
-	//E(i, 2) = (AU01_c(i)*AU01_r(i) + AU02_c(i)*AU02_r(i) + AU05_c(i)*AU05_r(i) + AU27_c(i)*AU27_r(i)) / 4;
+	
 	e1.push_back((AU01_c*AU01_r + AU02_c*AU02_r + AU05_c*AU05_r) / 3);
 	e1.push_back((AU01_c*AU01_r + AU02_c*AU02_r + AU26_c*AU26_r) / 3);
-	//%E(i, 5) = (AU01_c(i)*AU01_r(i) + AU02_c(i)*AU02_r(i) + AU27_c(i)*AU27_r(i)) / 3;
+
 	e1.push_back((AU05_c*AU05_r + AU26_c*AU26_r) / 2);
-	//%E1(i, 7) = (AU26_c(i)*AU26_r(i));
+
 
 
 	//%страх
-	//%E2(i, 8) = (AU01_c(i)*AU01_r(i) + AU02_c(i)*AU02_r(i) + AU04_c(i)*AU04_r(i) + AU05_c(i)*AU05_r(i) + AU20_c(i)*AU20_r(i) + AU25_c(i)*AU25_r(i) + AU26_c(i)*AU26_r(i)) / 7;
-	//%E(i, 9) = (AU01_c(i)*AU01_r(i) + AU02_c(i)*AU02_r(i) + AU04_c(i)*AU04_r(i) + AU05_c(i)*AU05_r(i) + AU20_c(i)*AU20_r(i) + AU25_c(i)*AU25_r(i) + AU27_c(i)*AU27_r(i)) / 7;
+	
 	e2.push_back((AU01_c*AU01_r + AU02_c*AU02_r + AU04_c*AU04_r + AU05_c*AU05_r + AU25_c*AU25_r + AU26_c*AU26_r) / 6);
-	//%E(i, 11) = (AU01_c(i)*AU01_r(i) + AU02_c(i)*AU02_r(i) + AU04_c(i)*AU04_r(i) + AU05_c(i)*AU05_r(i) + AU25_c(i)*AU25_r(i) + AU27_c(i)*AU27_r(i)) / 6;
+	
 	e2.push_back((AU01_c*AU01_r + AU02_c*AU02_r + AU04_c*AU04_r + AU05_c*AU05_r) / 4);
 	e2.push_back((AU01_c*AU01_r + AU02_c*AU02_r + AU05_c*AU05_r + AU25_c*AU25_r) / 4);
 	e2.push_back((AU01_c*AU01_r + AU02_c*AU02_r + AU05_c*AU05_r + AU25_c*AU25_r + AU26_c*AU26_r) / 5);
-	//%E(i, 15) = (AU01_c(i)*AU01_r(i) + AU02_c(i)*AU02_r(i) + AU05_c(i)*AU05_r(i) + AU25_c(i)*AU25_r(i) + AU26_c(i)*AU26_r(i) + AU27_c(i)*AU27_r(i)) / 6;
+	
 	e2.push_back((AU01_c*AU01_r + AU02_c*AU02_r + AU05_c*AU05_r + AU26_c*AU26_r) / 4);
-	//%E(i, 17) = (AU01_c(i)*AU01_r(i) + AU02_c(i)*AU02_r(i) + AU05_c(i)*AU05_r(i) + AU27_c(i)*AU27_r(i)) / 4;
+
 	e2.push_back((AU01_c*AU01_r + AU02_c*AU02_r + AU05_c*AU05_r) / 3);
 	e2.push_back((AU05_c*AU05_r + AU20_c*AU20_r + AU25_c*AU25_r) / 3);
 	e2.push_back((AU05_c*AU05_r + AU20_c*AU20_r + AU25_c*AU25_r + AU26_c*AU26_r) / 4);
-	//%E(i, 21) = (AU05_c(i)*AU05_r(i) + AU20_c(i)*AU20_r(i) + AU25_c(i)*AU25_r(i) + AU26_c(i)*AU26_r(i) + AU27_c(i)*AU27_r(i)) / 5;
+
 	e2.push_back((AU05_c*AU05_r + AU20_c*AU20_r + AU26_c*AU26_r) / 3);
-	//%E(i, 23) = (AU05_c(i)*AU05_r(i) + AU20_c(i)*AU20_r(i) + AU27_c(i)*AU27_r(i)) / 3;
+
 	e2.push_back((AU05_c*AU05_r + AU20_c*AU20_r) / 2);
 	//%радость
 	e3.push_back((AU06_c*AU06_r + AU12_c*AU12_r) / 2);
 	e3.push_back((AU12_c*AU12_r));
 	//%ечаль
-	//%E(i, 27) = (AU01_c(i)*AU01_r(i) + AU04_c(i)*AU04_r(i) + AU11_c(i)*AU11_r(i) + AU15_c(i)*AU15_r(i)) / 4;
+
 	e4.push_back((AU01_c*AU01_r + AU04_c*AU04_r + AU15_c*AU15_r) / 3);
 	e4.push_back((AU06_c*AU06_r + AU15_c*AU15_r) / 2);
-	//%E(i, 30) = (AU01_c(i)*AU01_r(i) + AU04_c(i)*AU04_r(i) + AU11_c(i)*AU11_r(i)) / 3;
+
 	e4.push_back((AU01_c*AU01_r + AU04_c*AU04_r + AU15_c*AU15_r + AU17_c*AU17_r) / 4);
-	//%E(i, 32) = (AU15_c(i)*AU15_r(i));
-	//%E(i, 33) = (AU11_c(i)*AU11_r(i) + AU17_c(i)*AU17_r(i)) / 2;
+
 	//%отвращение
 	e5.push_back((AU09_c*AU09_r));
-	//%E(i, 35) = (AU09_c(i)*AU09_r(i) + AU16_c(i)*AU16_r(i) + AU15_c(i)*AU15_r(i)) / 3;
-	//%E(i, 36) = (AU09_c(i)*AU09_r(i) + AU16_c(i)*AU16_r(i) + AU26_c(i)*AU26_r(i)) / 3;
+
 	e5.push_back((AU09_c*AU09_r + AU17_c*AU17_r) / 2);
 	e5.push_back((AU10_c*AU10_r));
-	//%E(i, 39) = (AU10_c(i)*AU10_r(i) + AU16_c(i)*AU16_r(i) + AU25_c(i)*AU25_r(i)) / 3;
-	//%E(i, 40) = (AU10_c(i)*AU10_r(i) + AU16_c(i)*AU16_r(i) + AU26_c(i)*AU26_r(i)) / 3;
+
 	e5.push_back((AU10_c*AU10_r + AU17_c*AU17_r) / 2);
 	//%гнев
-	//%E(i, 42) = (AU04_c(i)*AU04_r(i) + AU05_c(i)*AU05_r(i) + AU07_c(i)*AU07_r(i) + AU10_c(i)*AU10_r(i) + AU22_c(i)*AU22_r(i) + AU23_c(i)*AU23_r(i) + AU25_c(i)*AU25_r(i)) / 7;
-	//%E(i, 43) = (AU04_c(i)*AU04_r(i) + AU05_c(i)*AU05_r(i) + AU07_c(i)*AU07_r(i) + AU10_c(i)*AU10_r(i) + AU22_c(i)*AU22_r(i) + AU23_c(i)*AU23_r(i) + AU26_c(i)*AU26_r(i)) / 7;
+	
 	e6.push_back((AU04_c*AU04_r + AU05_c*AU05_r + AU07_c*AU07_r + AU10_c*AU10_r + AU23_c*AU23_r + AU25_c*AU25_r) / 6);
 	e6.push_back((AU04_c*AU04_r + AU05_c*AU05_r + AU07_c*AU07_r + AU10_c*AU10_r + AU23_c*AU23_r + AU26_c*AU26_r) / 6);
 	e6.push_back((AU04_c*AU04_r + AU05_c*AU05_r + AU07_c*AU07_r + AU23_c*AU23_r + AU25_c*AU25_r) / 5);
 	e6.push_back((AU04_c*AU04_r + AU05_c*AU05_r + AU07_c*AU07_r + AU23_c*AU23_r + AU26_c*AU26_r) / 5);
 	e6.push_back((AU04_c*AU04_r + AU05_c*AU05_r + AU07_c*AU07_r + AU17_c*AU17_r + AU23_c*AU23_r) / 5);
-	//%E(i, 49) = (AU04_c(i)*AU04_r(i) + AU05_c(i)*AU05_r(i) + AU07_c(i)*AU07_r(i) + AU17_c(i)*AU17_r(i) + AU24_c(i)*AU24_r(i)) / 5;
+	
 	e6.push_back((AU04_c*AU04_r + AU05_c*AU05_r + AU07_c*AU07_r + AU23_c*AU23_r) / 4);
-	//%E(i, 51) = (AU04_c(i)*AU04_r(i) + AU05_c(i)*AU05_r(i) + AU07_c(i)*AU07_r(i) + AU24_c(i)*AU24_r(i)) / 4;
 
-	//%E(i, 52) = (AU05_c(i)*AU05_r(i) + AU07_c(i)*AU07_r(i) + AU10_c(i)*AU10_r(i) + AU22_c(i)*AU22_r(i) + AU23_c(i)*AU23_r(i) + AU25_c(i)*AU25_r(i)) / 6;
-	//%E(i, 53) = (AU05_c(i)*AU05_r(i) + AU07_c(i)*AU07_r(i) + AU10_c(i)*AU10_r(i) + AU22_c(i)*AU22_r(i) + AU23_c(i)*AU23_r(i) + AU26_c(i)*AU26_r(i)) / 6;
+
+	
 	e6.push_back((AU05_c*AU05_r + AU07_c*AU07_r + AU10_c*AU10_r + AU23_c*AU23_r + AU25_c*AU25_r) / 5);
 	e6.push_back((AU05_c*AU05_r + AU07_c*AU07_r + AU10_c*AU10_r + AU23_c*AU23_r + AU26_c*AU26_r) / 5);
 	e6.push_back((AU05_c*AU05_r + AU07_c*AU07_r + AU23_c*AU23_r + AU25_c*AU25_r) / 4);
 	e6.push_back((AU05_c*AU05_r + AU07_c*AU07_r + AU23_c*AU23_r + AU26_c*AU26_r) / 4);
 	e6.push_back((AU05_c*AU05_r + AU07_c*AU07_r + AU17_c*AU17_r + AU23_c*AU23_r) / 4);
-	//%E(i, 59) = (AU05_c(i)*AU05_r(i) + AU07_c(i)*AU07_r(i) + AU17_c(i)*AU17_r(i) + AU24_c(i)*AU24_r(i)) / 4;
-	e6.push_back((AU05_c*AU05_r + AU07_c*AU07_r + AU23_c*AU23_r) / 3);
-	//%E(i, 61) = (AU05_c(i)*AU05_r(i) + AU07_c(i)*AU07_r(i) + AU24_c(i)*AU24_r(i)) / 3;
 
-	//%E(i, 62) = (AU04_c(i)*AU04_r(i) + AU07_c(i)*AU07_r(i) + AU10_c(i)*AU10_r(i) + AU22_c(i)*AU22_r(i) + AU23_c(i)*AU23_r(i) + AU25_c(i)*AU25_r(i)) / 6;
-	//%E(i, 63) = (AU04_c(i)*AU04_r(i) + AU07_c(i)*AU07_r(i) + AU10_c(i)*AU10_r(i) + AU22_c(i)*AU22_r(i) + AU23_c(i)*AU23_r(i) + AU26_c(i)*AU26_r(i)) / 6;
+	e6.push_back((AU05_c*AU05_r + AU07_c*AU07_r + AU23_c*AU23_r) / 3);
+
+
+
 	e6.push_back((AU04_c*AU04_r + AU07_c*AU07_r + AU10_c*AU10_r + AU23_c*AU23_r + AU25_c*AU25_r) / 5);
 	e6.push_back((AU04_c*AU04_r + AU07_c*AU07_r + AU10_c*AU10_r + AU23_c*AU23_r + AU26_c*AU26_r) / 5);
 	e6.push_back((AU04_c*AU04_r + AU07_c*AU07_r + AU23_c*AU23_r + AU25_c*AU25_r) / 4);
 	e6.push_back((AU04_c*AU04_r + AU07_c*AU07_r + AU23_c*AU23_r + AU26_c*AU26_r) / 4);
 	e6.push_back((AU04_c*AU04_r + AU07_c*AU07_r + AU17_c*AU17_r + AU23_c*AU23_r) / 4);
-	//%E(i, 69) = (AU04_c(i)*AU04_r(i) + AU07_c(i)*AU07_r(i) + AU17_c(i)*AU17_r(i) + AU24_c(i)*AU24_r(i)) / 4;
-	e6.push_back((AU04_c*AU04_r + AU07_c*AU07_r + AU23_c*AU23_r) / 3);
-	//%E(i, 71) = (AU04_c(i)*AU04_r(i) + AU07_c(i)*AU07_r(i) + AU24_c(i)*AU24_r(i)) / 3;
 
-	//%E(i, 72) = (AU04_c(i)*AU04_r(i) + AU05_c(i)*AU05_r(i) + AU10_c(i)*AU10_r(i) + AU22_c(i)*AU22_r(i) + AU23_c(i)*AU23_r(i) + AU25_c(i)*AU25_r(i)) / 6;
-	//%E(i, 73) = (AU04_c(i)*AU04_r(i) + AU05_c(i)*AU05_r(i) + AU10_c(i)*AU10_r(i) + AU22_c(i)*AU22_r(i) + AU23_c(i)*AU23_r(i) + AU26_c(i)*AU26_r(i)) / 6;
+	e6.push_back((AU04_c*AU04_r + AU07_c*AU07_r + AU23_c*AU23_r) / 3);
+
 	e6.push_back((AU04_c*AU04_r + AU05_c*AU05_r + AU10_c*AU10_r + AU23_c*AU23_r + AU25_c*AU25_r) / 5);
 	e6.push_back((AU04_c*AU04_r + AU05_c*AU05_r + AU10_c*AU10_r + AU23_c*AU23_r + AU26_c*AU26_r) / 5);
 	e6.push_back((AU04_c*AU04_r + AU05_c*AU05_r + AU23_c*AU23_r + AU25_c*AU25_r) / 4);
 	e6.push_back((AU04_c*AU04_r + AU05_c*AU05_r + AU23_c*AU23_r + AU26_c*AU26_r) / 4);
 	e6.push_back((AU04_c*AU04_r + AU05_c*AU05_r + AU17_c*AU17_r + AU23_c*AU23_r) / 4);
-	//%E(i, 79) = (AU04_c(i)*AU04_r(i) + AU05_c(i)*AU05_r(i) + AU17_c(i)*AU17_r(i) + AU24_c(i)*AU24_r(i)) / 4;
-	e6.push_back((AU04_c*AU04_r + AU05_c*AU05_r + AU23_c*AU23_r) / 3);
-	//%E(i, 81) = (AU04_c(i)*AU04_r(i) + AU05_c(i)*AU05_r(i) + AU24_c(i)*AU24_r(i)) / 3;
 
-	//%E(i, 82) = (AU04_c(i)*AU04_r(i) + AU05_c(i)*AU05_r(i) + AU07_c(i)*AU07_r(i) + AU22_c(i)*AU22_r(i) + AU23_c(i)*AU23_r(i) + AU25_c(i)*AU25_r(i)) / 6;
-	//%E(i, 83) = (AU04_c(i)*AU04_r(i) + AU05_c(i)*AU05_r(i) + AU07_c(i)*AU07_r(i) + AU22_c(i)*AU22_r(i) + AU23_c(i)*AU23_r(i) + AU26_c(i)*AU26_r(i)) / 6;
+	e6.push_back((AU04_c*AU04_r + AU05_c*AU05_r + AU23_c*AU23_r) / 3);
+
 	e6.push_back((AU04_c*AU04_r + AU05_c*AU05_r + AU07_c*AU07_r + AU23_c*AU23_r + AU25_c*AU25_r) / 5);
 	e6.push_back((AU04_c*AU04_r + AU05_c*AU05_r + AU07_c*AU07_r + AU23_c*AU23_r + AU26_c*AU26_r) / 5);
 
-	/*std::vector<int>::iterator r1;
-	r1 = std::max_element(e1.begin(), e1.end());
-	std::cout << "max element at: " << std::distance(e1.begin(), r1) << '\n';
-	//std::cout << r1 << std::endl;
-	*/
 
 
 
@@ -1846,8 +1621,7 @@ void outputAllFeatures(std::ofstream* output_file, bool output_2D_landmarks, boo
 
 	double a = em[r];
 
-	//std::cout << "max element at: " << r << '\n';
-	//std::cout << "max element: " << a << '\n';
+
 	double sum_of_elems = std::accumulate(em.begin(), em.end(), 0);
 
 	string strr, strr2;
@@ -1859,7 +1633,7 @@ void outputAllFeatures(std::ofstream* output_file, bool output_2D_landmarks, boo
 
 	}
 
-	//double s = (a / sum_of_elems)*100;
+
 	else
 	{
 
@@ -1893,15 +1667,7 @@ void outputAllFeatures(std::ofstream* output_file, bool output_2D_landmarks, boo
 			*output_file << " " << "anger";
 			strr = "anger";
 		}
-		/*	cv::putText(captured_image,
-		strr,
-		cv::Point(20, 20), // Coordinates
-		cv::FONT_HERSHEY_COMPLEX_SMALL, // Font
-		1.0, // Scale. 2.0 = 2x bigger
-		cv::Scalar(255, 255, 255), // Color
-		1, // Thickness
-		CV_AA);
-		*/
+
 		em[r] = 0;
 		std::vector<double>::iterator result7;
 		result7 = std::max_element(em.begin(), em.end());
@@ -1948,21 +1714,13 @@ void outputAllFeatures(std::ofstream* output_file, bool output_2D_landmarks, boo
 		zz1= to_string(z1) + "%";
 		
 		zz2= to_string(z2) + "%";
-		/*cv::putText(captured_image,
-		"TEEEEEEEEEEEEEEEXT",
-		cv::Point(5, 5), // Coordinates
-		cv::FONT_HERSHEY_COMPLEX_SMALL, // Font
-		1.0, // Scale. 2.0 = 2x bigger
-		cv::Scalar(255, 255, 255), // Color
-		1, // Thickness
-		CV_AA);
-		*/
+
 
 	}
 	aa.clear();
-	//outfile << endl;
+
 	*output_file << endl;
-	//string a="Here is some text";
+
 	
 		vect.push_back(strr);
 		vect.push_back(strr2);
@@ -1971,41 +1729,7 @@ void outputAllFeatures(std::ofstream* output_file, bool output_2D_landmarks, boo
 	
 	return vec.swap(vect);
 		
-	/*vector<string> f = { "dsnfnmdf" }, m = { "jfdfmn" };
-	// Work out the framerate
-	if (frame_count % 25 == 0)
-	{
-		an = strr;
-		f.push_back(an);
-		an2 = strr2;
-		m.push_back(an2);
-	}
-	bb = f[f.size() - 1];
-	cc = m[m.size() - 1];
-		cv::putText(captured_image,
-			//f[f.size()-1],
-			bb,
-			cv::Point(50, 50), // Coordinates
-			cv::FONT_HERSHEY_COMPLEX_SMALL, // Font
-			1.0, // Scale. 2.0 = 2x bigger
-			cv::Scalar(255, 0, 0), // Color
-			1, // Thickness
-			CV_AA); // Anti-alias
-		cv::putText(captured_image,
-			//m[m.size() - 1],
-			cc,
-			cv::Point(50, 100), // Coordinates
-			cv::FONT_HERSHEY_COMPLEX_SMALL, // Font
-			1.0, // Scale. 2.0 = 2x bigger
-			cv::Scalar(255, 0, 0), // Color
-			1, // Thickness
-			CV_AA); // Anti-alias
-		//return a;
 	
-	cv::namedWindow("tracking", 1);
-	cv::imshow("tracking", captured_image);
-	//return an;
-	*/
 }
 
 
@@ -2297,9 +2021,9 @@ void outputAllF(const FaceAnalysis::FaceAnalyser& face_analyser, cv::Mat& captur
 
 
 	std::cout << "function AU_2" << std::endl;
-	/////////////////////////
+
 	vector<double> e1, e2, e3, e4, e5, e6;
-	//e1[0]=(aa[0]*aa[17]+aa[1]*aa[18]+aa[3]*aa[20]+)
+
 	double AU01_c = aa[0], AU02_c = aa[1], AU04_c = aa[2], AU05_c = aa[3], AU06_c = aa[4], AU07_c = aa[5], AU09_c = aa[6],
 		AU10_c = aa[7], AU12_c = aa[8], AU14_c = aa[9], AU15_c = aa[10], AU17_c = aa[11], AU20_c = aa[12], AU23_c = aa[13],
 		AU25_c = aa[14], AU26_c = aa[15], AU45_c = aa[16];
@@ -2309,107 +2033,92 @@ void outputAllF(const FaceAnalysis::FaceAnalyser& face_analyser, cv::Mat& captur
 
 	//удивление
 	e1.push_back((AU01_c*AU01_r + AU02_c*AU02_r + AU05_c*AU05_r + AU26_c*AU26_r) / 4);
-	//E(i, 2) = (AU01_c(i)*AU01_r(i) + AU02_c(i)*AU02_r(i) + AU05_c(i)*AU05_r(i) + AU27_c(i)*AU27_r(i)) / 4;
+
 	e1.push_back((AU01_c*AU01_r + AU02_c*AU02_r + AU05_c*AU05_r) / 3);
 	e1.push_back((AU01_c*AU01_r + AU02_c*AU02_r + AU26_c*AU26_r) / 3);
-	//%E(i, 5) = (AU01_c(i)*AU01_r(i) + AU02_c(i)*AU02_r(i) + AU27_c(i)*AU27_r(i)) / 3;
+
 	e1.push_back((AU05_c*AU05_r + AU26_c*AU26_r) / 2);
-	//%E1(i, 7) = (AU26_c(i)*AU26_r(i));
+
 
 
 	//%страх
-	//%E2(i, 8) = (AU01_c(i)*AU01_r(i) + AU02_c(i)*AU02_r(i) + AU04_c(i)*AU04_r(i) + AU05_c(i)*AU05_r(i) + AU20_c(i)*AU20_r(i) + AU25_c(i)*AU25_r(i) + AU26_c(i)*AU26_r(i)) / 7;
-	//%E(i, 9) = (AU01_c(i)*AU01_r(i) + AU02_c(i)*AU02_r(i) + AU04_c(i)*AU04_r(i) + AU05_c(i)*AU05_r(i) + AU20_c(i)*AU20_r(i) + AU25_c(i)*AU25_r(i) + AU27_c(i)*AU27_r(i)) / 7;
+	
 	e2.push_back((AU01_c*AU01_r + AU02_c*AU02_r + AU04_c*AU04_r + AU05_c*AU05_r + AU25_c*AU25_r + AU26_c*AU26_r) / 6);
-	//%E(i, 11) = (AU01_c(i)*AU01_r(i) + AU02_c(i)*AU02_r(i) + AU04_c(i)*AU04_r(i) + AU05_c(i)*AU05_r(i) + AU25_c(i)*AU25_r(i) + AU27_c(i)*AU27_r(i)) / 6;
+
 	e2.push_back((AU01_c*AU01_r + AU02_c*AU02_r + AU04_c*AU04_r + AU05_c*AU05_r) / 4);
 	e2.push_back((AU01_c*AU01_r + AU02_c*AU02_r + AU05_c*AU05_r + AU25_c*AU25_r) / 4);
 	e2.push_back((AU01_c*AU01_r + AU02_c*AU02_r + AU05_c*AU05_r + AU25_c*AU25_r + AU26_c*AU26_r) / 5);
-	//%E(i, 15) = (AU01_c(i)*AU01_r(i) + AU02_c(i)*AU02_r(i) + AU05_c(i)*AU05_r(i) + AU25_c(i)*AU25_r(i) + AU26_c(i)*AU26_r(i) + AU27_c(i)*AU27_r(i)) / 6;
+	
 	e2.push_back((AU01_c*AU01_r + AU02_c*AU02_r + AU05_c*AU05_r + AU26_c*AU26_r) / 4);
-	//%E(i, 17) = (AU01_c(i)*AU01_r(i) + AU02_c(i)*AU02_r(i) + AU05_c(i)*AU05_r(i) + AU27_c(i)*AU27_r(i)) / 4;
+	
 	e2.push_back((AU01_c*AU01_r + AU02_c*AU02_r + AU05_c*AU05_r) / 3);
 	e2.push_back((AU05_c*AU05_r + AU20_c*AU20_r + AU25_c*AU25_r) / 3);
 	e2.push_back((AU05_c*AU05_r + AU20_c*AU20_r + AU25_c*AU25_r + AU26_c*AU26_r) / 4);
-	//%E(i, 21) = (AU05_c(i)*AU05_r(i) + AU20_c(i)*AU20_r(i) + AU25_c(i)*AU25_r(i) + AU26_c(i)*AU26_r(i) + AU27_c(i)*AU27_r(i)) / 5;
+
 	e2.push_back((AU05_c*AU05_r + AU20_c*AU20_r + AU26_c*AU26_r) / 3);
-	//%E(i, 23) = (AU05_c(i)*AU05_r(i) + AU20_c(i)*AU20_r(i) + AU27_c(i)*AU27_r(i)) / 3;
+
 	e2.push_back((AU05_c*AU05_r + AU20_c*AU20_r) / 2);
 	//%радость
 	e3.push_back((AU06_c*AU06_r + AU12_c*AU12_r) / 2);
 	e3.push_back((AU12_c*AU12_r));
 	//%ечаль
-	//%E(i, 27) = (AU01_c(i)*AU01_r(i) + AU04_c(i)*AU04_r(i) + AU11_c(i)*AU11_r(i) + AU15_c(i)*AU15_r(i)) / 4;
+
 	e4.push_back((AU01_c*AU01_r + AU04_c*AU04_r + AU15_c*AU15_r) / 3);
 	e4.push_back((AU06_c*AU06_r + AU15_c*AU15_r) / 2);
-	//%E(i, 30) = (AU01_c(i)*AU01_r(i) + AU04_c(i)*AU04_r(i) + AU11_c(i)*AU11_r(i)) / 3;
+
 	e4.push_back((AU01_c*AU01_r + AU04_c*AU04_r + AU15_c*AU15_r + AU17_c*AU17_r) / 4);
-	//%E(i, 32) = (AU15_c(i)*AU15_r(i));
-	//%E(i, 33) = (AU11_c(i)*AU11_r(i) + AU17_c(i)*AU17_r(i)) / 2;
+
 	//%отвращение
 	e5.push_back((AU09_c*AU09_r));
-	//%E(i, 35) = (AU09_c(i)*AU09_r(i) + AU16_c(i)*AU16_r(i) + AU15_c(i)*AU15_r(i)) / 3;
-	//%E(i, 36) = (AU09_c(i)*AU09_r(i) + AU16_c(i)*AU16_r(i) + AU26_c(i)*AU26_r(i)) / 3;
+
 	e5.push_back((AU09_c*AU09_r + AU17_c*AU17_r) / 2);
 	e5.push_back((AU10_c*AU10_r));
-	//%E(i, 39) = (AU10_c(i)*AU10_r(i) + AU16_c(i)*AU16_r(i) + AU25_c(i)*AU25_r(i)) / 3;
-	//%E(i, 40) = (AU10_c(i)*AU10_r(i) + AU16_c(i)*AU16_r(i) + AU26_c(i)*AU26_r(i)) / 3;
+
 	e5.push_back((AU10_c*AU10_r + AU17_c*AU17_r) / 2);
 	//%гнев
-	//%E(i, 42) = (AU04_c(i)*AU04_r(i) + AU05_c(i)*AU05_r(i) + AU07_c(i)*AU07_r(i) + AU10_c(i)*AU10_r(i) + AU22_c(i)*AU22_r(i) + AU23_c(i)*AU23_r(i) + AU25_c(i)*AU25_r(i)) / 7;
-	//%E(i, 43) = (AU04_c(i)*AU04_r(i) + AU05_c(i)*AU05_r(i) + AU07_c(i)*AU07_r(i) + AU10_c(i)*AU10_r(i) + AU22_c(i)*AU22_r(i) + AU23_c(i)*AU23_r(i) + AU26_c(i)*AU26_r(i)) / 7;
+	
 	e6.push_back((AU04_c*AU04_r + AU05_c*AU05_r + AU07_c*AU07_r + AU10_c*AU10_r + AU23_c*AU23_r + AU25_c*AU25_r) / 6);
 	e6.push_back((AU04_c*AU04_r + AU05_c*AU05_r + AU07_c*AU07_r + AU10_c*AU10_r + AU23_c*AU23_r + AU26_c*AU26_r) / 6);
 	e6.push_back((AU04_c*AU04_r + AU05_c*AU05_r + AU07_c*AU07_r + AU23_c*AU23_r + AU25_c*AU25_r) / 5);
 	e6.push_back((AU04_c*AU04_r + AU05_c*AU05_r + AU07_c*AU07_r + AU23_c*AU23_r + AU26_c*AU26_r) / 5);
 	e6.push_back((AU04_c*AU04_r + AU05_c*AU05_r + AU07_c*AU07_r + AU17_c*AU17_r + AU23_c*AU23_r) / 5);
-	//%E(i, 49) = (AU04_c(i)*AU04_r(i) + AU05_c(i)*AU05_r(i) + AU07_c(i)*AU07_r(i) + AU17_c(i)*AU17_r(i) + AU24_c(i)*AU24_r(i)) / 5;
-	e6.push_back((AU04_c*AU04_r + AU05_c*AU05_r + AU07_c*AU07_r + AU23_c*AU23_r) / 4);
-	//%E(i, 51) = (AU04_c(i)*AU04_r(i) + AU05_c(i)*AU05_r(i) + AU07_c(i)*AU07_r(i) + AU24_c(i)*AU24_r(i)) / 4;
 
-	//%E(i, 52) = (AU05_c(i)*AU05_r(i) + AU07_c(i)*AU07_r(i) + AU10_c(i)*AU10_r(i) + AU22_c(i)*AU22_r(i) + AU23_c(i)*AU23_r(i) + AU25_c(i)*AU25_r(i)) / 6;
-	//%E(i, 53) = (AU05_c(i)*AU05_r(i) + AU07_c(i)*AU07_r(i) + AU10_c(i)*AU10_r(i) + AU22_c(i)*AU22_r(i) + AU23_c(i)*AU23_r(i) + AU26_c(i)*AU26_r(i)) / 6;
+	e6.push_back((AU04_c*AU04_r + AU05_c*AU05_r + AU07_c*AU07_r + AU23_c*AU23_r) / 4);
+
+
+	
 	e6.push_back((AU05_c*AU05_r + AU07_c*AU07_r + AU10_c*AU10_r + AU23_c*AU23_r + AU25_c*AU25_r) / 5);
 	e6.push_back((AU05_c*AU05_r + AU07_c*AU07_r + AU10_c*AU10_r + AU23_c*AU23_r + AU26_c*AU26_r) / 5);
 	e6.push_back((AU05_c*AU05_r + AU07_c*AU07_r + AU23_c*AU23_r + AU25_c*AU25_r) / 4);
 	e6.push_back((AU05_c*AU05_r + AU07_c*AU07_r + AU23_c*AU23_r + AU26_c*AU26_r) / 4);
 	e6.push_back((AU05_c*AU05_r + AU07_c*AU07_r + AU17_c*AU17_r + AU23_c*AU23_r) / 4);
-	//%E(i, 59) = (AU05_c(i)*AU05_r(i) + AU07_c(i)*AU07_r(i) + AU17_c(i)*AU17_r(i) + AU24_c(i)*AU24_r(i)) / 4;
-	e6.push_back((AU05_c*AU05_r + AU07_c*AU07_r + AU23_c*AU23_r) / 3);
-	//%E(i, 61) = (AU05_c(i)*AU05_r(i) + AU07_c(i)*AU07_r(i) + AU24_c(i)*AU24_r(i)) / 3;
 
-	//%E(i, 62) = (AU04_c(i)*AU04_r(i) + AU07_c(i)*AU07_r(i) + AU10_c(i)*AU10_r(i) + AU22_c(i)*AU22_r(i) + AU23_c(i)*AU23_r(i) + AU25_c(i)*AU25_r(i)) / 6;
-	//%E(i, 63) = (AU04_c(i)*AU04_r(i) + AU07_c(i)*AU07_r(i) + AU10_c(i)*AU10_r(i) + AU22_c(i)*AU22_r(i) + AU23_c(i)*AU23_r(i) + AU26_c(i)*AU26_r(i)) / 6;
+	e6.push_back((AU05_c*AU05_r + AU07_c*AU07_r + AU23_c*AU23_r) / 3);
+
+
+	
 	e6.push_back((AU04_c*AU04_r + AU07_c*AU07_r + AU10_c*AU10_r + AU23_c*AU23_r + AU25_c*AU25_r) / 5);
 	e6.push_back((AU04_c*AU04_r + AU07_c*AU07_r + AU10_c*AU10_r + AU23_c*AU23_r + AU26_c*AU26_r) / 5);
 	e6.push_back((AU04_c*AU04_r + AU07_c*AU07_r + AU23_c*AU23_r + AU25_c*AU25_r) / 4);
 	e6.push_back((AU04_c*AU04_r + AU07_c*AU07_r + AU23_c*AU23_r + AU26_c*AU26_r) / 4);
 	e6.push_back((AU04_c*AU04_r + AU07_c*AU07_r + AU17_c*AU17_r + AU23_c*AU23_r) / 4);
-	//%E(i, 69) = (AU04_c(i)*AU04_r(i) + AU07_c(i)*AU07_r(i) + AU17_c(i)*AU17_r(i) + AU24_c(i)*AU24_r(i)) / 4;
-	e6.push_back((AU04_c*AU04_r + AU07_c*AU07_r + AU23_c*AU23_r) / 3);
-	//%E(i, 71) = (AU04_c(i)*AU04_r(i) + AU07_c(i)*AU07_r(i) + AU24_c(i)*AU24_r(i)) / 3;
 
-	//%E(i, 72) = (AU04_c(i)*AU04_r(i) + AU05_c(i)*AU05_r(i) + AU10_c(i)*AU10_r(i) + AU22_c(i)*AU22_r(i) + AU23_c(i)*AU23_r(i) + AU25_c(i)*AU25_r(i)) / 6;
-	//%E(i, 73) = (AU04_c(i)*AU04_r(i) + AU05_c(i)*AU05_r(i) + AU10_c(i)*AU10_r(i) + AU22_c(i)*AU22_r(i) + AU23_c(i)*AU23_r(i) + AU26_c(i)*AU26_r(i)) / 6;
+	e6.push_back((AU04_c*AU04_r + AU07_c*AU07_r + AU23_c*AU23_r) / 3);
+
+
+	
 	e6.push_back((AU04_c*AU04_r + AU05_c*AU05_r + AU10_c*AU10_r + AU23_c*AU23_r + AU25_c*AU25_r) / 5);
 	e6.push_back((AU04_c*AU04_r + AU05_c*AU05_r + AU10_c*AU10_r + AU23_c*AU23_r + AU26_c*AU26_r) / 5);
 	e6.push_back((AU04_c*AU04_r + AU05_c*AU05_r + AU23_c*AU23_r + AU25_c*AU25_r) / 4);
 	e6.push_back((AU04_c*AU04_r + AU05_c*AU05_r + AU23_c*AU23_r + AU26_c*AU26_r) / 4);
 	e6.push_back((AU04_c*AU04_r + AU05_c*AU05_r + AU17_c*AU17_r + AU23_c*AU23_r) / 4);
-	//%E(i, 79) = (AU04_c(i)*AU04_r(i) + AU05_c(i)*AU05_r(i) + AU17_c(i)*AU17_r(i) + AU24_c(i)*AU24_r(i)) / 4;
+	
 	e6.push_back((AU04_c*AU04_r + AU05_c*AU05_r + AU23_c*AU23_r) / 3);
-	//%E(i, 81) = (AU04_c(i)*AU04_r(i) + AU05_c(i)*AU05_r(i) + AU24_c(i)*AU24_r(i)) / 3;
 
-	//%E(i, 82) = (AU04_c(i)*AU04_r(i) + AU05_c(i)*AU05_r(i) + AU07_c(i)*AU07_r(i) + AU22_c(i)*AU22_r(i) + AU23_c(i)*AU23_r(i) + AU25_c(i)*AU25_r(i)) / 6;
-	//%E(i, 83) = (AU04_c(i)*AU04_r(i) + AU05_c(i)*AU05_r(i) + AU07_c(i)*AU07_r(i) + AU22_c(i)*AU22_r(i) + AU23_c(i)*AU23_r(i) + AU26_c(i)*AU26_r(i)) / 6;
 	e6.push_back((AU04_c*AU04_r + AU05_c*AU05_r + AU07_c*AU07_r + AU23_c*AU23_r + AU25_c*AU25_r) / 5);
 	e6.push_back((AU04_c*AU04_r + AU05_c*AU05_r + AU07_c*AU07_r + AU23_c*AU23_r + AU26_c*AU26_r) / 5);
 
-	/*std::vector<int>::iterator r1;
-	r1 = std::max_element(e1.begin(), e1.end());
-	std::cout << "max element at: " << std::distance(e1.begin(), r1) << '\n';
-	//std::cout << r1 << std::endl;
-	*/
+
 
 
 
@@ -2457,62 +2166,52 @@ void outputAllF(const FaceAnalysis::FaceAnalyser& face_analyser, cv::Mat& captur
 
 	double a = em[r];
 
-	//std::cout << "max element at: " << r << '\n';
-	//std::cout << "max element: " << a << '\n';
 	double sum_of_elems = std::accumulate(em.begin(), em.end(), 0);
 
 	string strr, strr2;
 	if (sum_of_elems == 0)
 	{
-		//*output_file << " " << "neutral 100%";
+
 
 		strr = "neutral";
 
 	}
 
-	//double s = (a / sum_of_elems)*100;
+
 	else
 	{
 
 		if (r == 0)
 		{
-			//*output_file << " " << "surprise";
+		
 			strr = "surprise";
 		}
 		if (r == 1)
 		{
-			//*output_file << " " << "fear";
+
 			strr = "fear";
 		}
 		if (r == 2)
 		{
-			//*output_file << " " << "happiness";
+		
 			strr = "happiness";
 		}
 		if (r == 3)
 		{
-			//*output_file << " " << "sad";
+		
 			strr = "sad";
 		}
 		if (r == 4)
 		{
-			//*output_file << " " << "disgust";
+		
 			strr = "disgust";
 		}
 		if (r == 5)
 		{
-			//*output_file << " " << "anger";
+	
 			strr = "anger";
 		}
-		/*	cv::putText(captured_image,
-		strr,
-		cv::Point(20, 20), // Coordinates
-		cv::FONT_HERSHEY_COMPLEX_SMALL, // Font
-		1.0, // Scale. 2.0 = 2x bigger
-		cv::Scalar(255, 255, 255), // Color
-		1, // Thickness
-		CV_AA);
-		*/
+
 		em[r] = 0;
 		std::vector<double>::iterator result7;
 		result7 = std::max_element(em.begin(), em.end());
@@ -2520,60 +2219,49 @@ void outputAllF(const FaceAnalysis::FaceAnalyser& face_analyser, cv::Mat& captur
 		double a2 = em[r7];
 		if (r7 == 0)
 		{
-			//*output_file << " " << "surprise";
+			
 			strr2 = "surprise";
 		}
 		if (r7 == 1)
 		{
-			//*output_file << " " << "fear";
+			
 			strr2 = "fear";
 		}
 		if (r7 == 2)
 		{
-			//*output_file << " " << "happiness";
+			
 			strr2 = "happiness";
 		}
 		if (r7 == 3)
 		{
-			//*output_file << " " << "sad";
+		
 			strr2 = "sad";
 		}
 		if (r7 == 4)
 		{
-			//*output_file << " " << "disgust";
+		
 			strr2 = "disgust";
 		}
 		if (r7 == 5)
 		{
-			//*output_file << " " << "anger";
+		
 			strr2 = "anger";
 		}
 
 		double sum = a + a2;
 		double z1 = (a / sum) * 100;
 		double z2 = (a2 / sum) * 100;
-		//*output_file << " " << z1 << "%";
-		//*output_file << " " << z2 << "%";
+
 
 
 		zz1 = to_string(z1) + "%";
 
 		zz2 = to_string(z2) + "%";
-		/*cv::putText(captured_image,
-		"TEEEEEEEEEEEEEEEXT",
-		cv::Point(5, 5), // Coordinates
-		cv::FONT_HERSHEY_COMPLEX_SMALL, // Font
-		1.0, // Scale. 2.0 = 2x bigger
-		cv::Scalar(255, 255, 255), // Color
-		1, // Thickness
-		CV_AA);
-		*/
+
 
 	}
 	aa.clear();
-	//outfile << endl;
-	//*output_file << endl;
-	//string a="Here is some text";
+
 
 	vect.push_back(strr);
 	vect.push_back(strr2);
