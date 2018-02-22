@@ -1,0 +1,42 @@
+﻿  0 File(s) copied
+  stdafx.cpp
+  CCNF_patch_expert.cpp
+  LandmarkDetectorModel.cpp
+  LandmarkDetectorFunc.cpp
+  LandmarkDetectorParameters.cpp
+  LandmarkDetectorUtils.cpp
+C:\Users\Nastya\Documents\VisualStudia_Ust\VC\include\utility(158): warning C4267: инициализация: преобразование из "size_t" в "unsigned long"; возможна потеря данных (компилируется исходный файл src\LandmarkDetectorFunc.cpp)
+  d:\op_new\opf_3_6\lib\3rdparty\dlib\include\dlib\image_processing/shape_predictor.h(710): note: см. ссылку на создание экземпляров функции шаблон при компиляции "std::pair<unsigned long,unsigned long>::pair<int,unsigned __int64,void>(std::pair<int,unsigned __int64> &&) noexcept" (компилируется исходный файл src\LandmarkDetectorFunc.cpp)
+  d:\op_new\opf_3_6\lib\3rdparty\dlib\include\dlib\image_processing/shape_predictor.h(710): note: см. ссылку на создание экземпляров функции шаблон при компиляции "std::pair<unsigned long,unsigned long>::pair<int,unsigned __int64,void>(std::pair<int,unsigned __int64> &&) noexcept" (компилируется исходный файл src\LandmarkDetectorFunc.cpp)
+C:\Users\Nastya\Documents\VisualStudia_Ust\VC\include\utility(158): warning C4267: инициализация: преобразование из "size_t" в "unsigned long"; возможна потеря данных (компилируется исходный файл src\CCNF_patch_expert.cpp)
+  d:\op_new\opf_3_6\lib\3rdparty\dlib\include\dlib\image_processing/shape_predictor.h(710): note: см. ссылку на создание экземпляров функции шаблон при компиляции "std::pair<unsigned long,unsigned long>::pair<int,unsigned __int64,void>(std::pair<int,unsigned __int64> &&) noexcept" (компилируется исходный файл src\CCNF_patch_expert.cpp)
+  d:\op_new\opf_3_6\lib\3rdparty\dlib\include\dlib\image_processing/shape_predictor.h(710): note: см. ссылку на создание экземпляров функции шаблон при компиляции "std::pair<unsigned long,unsigned long>::pair<int,unsigned __int64,void>(std::pair<int,unsigned __int64> &&) noexcept" (компилируется исходный файл src\CCNF_patch_expert.cpp)
+C:\Users\Nastya\Documents\VisualStudia_Ust\VC\include\utility(158): warning C4267: инициализация: преобразование из "size_t" в "unsigned long"; возможна потеря данных (компилируется исходный файл src\LandmarkDetectorModel.cpp)
+  d:\op_new\opf_3_6\lib\3rdparty\dlib\include\dlib\image_processing/shape_predictor.h(710): note: см. ссылку на создание экземпляров функции шаблон при компиляции "std::pair<unsigned long,unsigned long>::pair<int,unsigned __int64,void>(std::pair<int,unsigned __int64> &&) noexcept" (компилируется исходный файл src\LandmarkDetectorModel.cpp)
+  d:\op_new\opf_3_6\lib\3rdparty\dlib\include\dlib\image_processing/shape_predictor.h(710): note: см. ссылку на создание экземпляров функции шаблон при компиляции "std::pair<unsigned long,unsigned long>::pair<int,unsigned __int64,void>(std::pair<int,unsigned __int64> &&) noexcept" (компилируется исходный файл src\LandmarkDetectorModel.cpp)
+C:\Users\Nastya\Documents\VisualStudia_Ust\VC\include\utility(158): warning C4267: инициализация: преобразование из "size_t" в "unsigned long"; возможна потеря данных (компилируется исходный файл src\LandmarkDetectorUtils.cpp)
+  d:\op_new\opf_3_6\lib\3rdparty\dlib\include\dlib\image_processing/shape_predictor.h(710): note: см. ссылку на создание экземпляров функции шаблон при компиляции "std::pair<unsigned long,unsigned long>::pair<int,unsigned __int64,void>(std::pair<int,unsigned __int64> &&) noexcept" (компилируется исходный файл src\LandmarkDetectorUtils.cpp)
+  d:\op_new\opf_3_6\lib\3rdparty\dlib\include\dlib\image_processing/shape_predictor.h(710): note: см. ссылку на создание экземпляров функции шаблон при компиляции "std::pair<unsigned long,unsigned long>::pair<int,unsigned __int64,void>(std::pair<int,unsigned __int64> &&) noexcept" (компилируется исходный файл src\LandmarkDetectorUtils.cpp)
+  LandmarkDetectionValidator.cpp
+  Patch_experts.cpp
+  PAW.cpp
+  PDM.cpp
+C:\Users\Nastya\Documents\VisualStudia_Ust\VC\include\utility(158): warning C4267: инициализация: преобразование из "size_t" в "unsigned long"; возможна потеря данных (компилируется исходный файл src\PAW.cpp)
+  d:\op_new\opf_3_6\lib\3rdparty\dlib\include\dlib\image_processing/shape_predictor.h(710): note: см. ссылку на создание экземпляров функции шаблон при компиляции "std::pair<unsigned long,unsigned long>::pair<int,unsigned __int64,void>(std::pair<int,unsigned __int64> &&) noexcept" (компилируется исходный файл src\PAW.cpp)
+  d:\op_new\opf_3_6\lib\3rdparty\dlib\include\dlib\image_processing/shape_predictor.h(710): note: см. ссылку на создание экземпляров функции шаблон при компиляции "std::pair<unsigned long,unsigned long>::pair<int,unsigned __int64,void>(std::pair<int,unsigned __int64> &&) noexcept" (компилируется исходный файл src\PAW.cpp)
+C:\Users\Nastya\Documents\VisualStudia_Ust\VC\include\utility(158): warning C4267: инициализация: преобразование из "size_t" в "unsigned long"; возможна потеря данных (компилируется исходный файл src\Patch_experts.cpp)
+  d:\op_new\opf_3_6\lib\3rdparty\dlib\include\dlib\image_processing/shape_predictor.h(710): note: см. ссылку на создание экземпляров функции шаблон при компиляции "std::pair<unsigned long,unsigned long>::pair<int,unsigned __int64,void>(std::pair<int,unsigned __int64> &&) noexcept" (компилируется исходный файл src\Patch_experts.cpp)
+  d:\op_new\opf_3_6\lib\3rdparty\dlib\include\dlib\image_processing/shape_predictor.h(710): note: см. ссылку на создание экземпляров функции шаблон при компиляции "std::pair<unsigned long,unsigned long>::pair<int,unsigned __int64,void>(std::pair<int,unsigned __int64> &&) noexcept" (компилируется исходный файл src\Patch_experts.cpp)
+C:\Users\Nastya\Documents\VisualStudia_Ust\VC\include\utility(158): warning C4267: инициализация: преобразование из "size_t" в "unsigned long"; возможна потеря данных (компилируется исходный файл src\LandmarkDetectionValidator.cpp)
+  d:\op_new\opf_3_6\lib\3rdparty\dlib\include\dlib\image_processing/shape_predictor.h(710): note: см. ссылку на создание экземпляров функции шаблон при компиляции "std::pair<unsigned long,unsigned long>::pair<int,unsigned __int64,void>(std::pair<int,unsigned __int64> &&) noexcept" (компилируется исходный файл src\LandmarkDetectionValidator.cpp)
+  d:\op_new\opf_3_6\lib\3rdparty\dlib\include\dlib\image_processing/shape_predictor.h(710): note: см. ссылку на создание экземпляров функции шаблон при компиляции "std::pair<unsigned long,unsigned long>::pair<int,unsigned __int64,void>(std::pair<int,unsigned __int64> &&) noexcept" (компилируется исходный файл src\LandmarkDetectionValidator.cpp)
+C:\Users\Nastya\Documents\VisualStudia_Ust\VC\include\utility(158): warning C4267: инициализация: преобразование из "size_t" в "unsigned long"; возможна потеря данных (компилируется исходный файл src\PDM.cpp)
+  d:\op_new\opf_3_6\lib\3rdparty\dlib\include\dlib\image_processing/shape_predictor.h(710): note: см. ссылку на создание экземпляров функции шаблон при компиляции "std::pair<unsigned long,unsigned long>::pair<int,unsigned __int64,void>(std::pair<int,unsigned __int64> &&) noexcept" (компилируется исходный файл src\PDM.cpp)
+  d:\op_new\opf_3_6\lib\3rdparty\dlib\include\dlib\image_processing/shape_predictor.h(710): note: см. ссылку на создание экземпляров функции шаблон при компиляции "std::pair<unsigned long,unsigned long>::pair<int,unsigned __int64,void>(std::pair<int,unsigned __int64> &&) noexcept" (компилируется исходный файл src\PDM.cpp)
+  SVR_patch_expert.cpp
+C:\Users\Nastya\Documents\VisualStudia_Ust\VC\include\utility(158): warning C4267: инициализация: преобразование из "size_t" в "unsigned long"; возможна потеря данных (компилируется исходный файл src\SVR_patch_expert.cpp)
+  d:\op_new\opf_3_6\lib\3rdparty\dlib\include\dlib\image_processing/shape_predictor.h(710): note: см. ссылку на создание экземпляров функции шаблон при компиляции "std::pair<unsigned long,unsigned long>::pair<int,unsigned __int64,void>(std::pair<int,unsigned __int64> &&) noexcept" (компилируется исходный файл src\SVR_patch_expert.cpp)
+  d:\op_new\opf_3_6\lib\3rdparty\dlib\include\dlib\image_processing/shape_predictor.h(710): note: см. ссылку на создание экземпляров функции шаблон при компиляции "std::pair<unsigned long,unsigned long>::pair<int,unsigned __int64,void>(std::pair<int,unsigned __int64> &&) noexcept" (компилируется исходный файл src\SVR_patch_expert.cpp)
+  LandmarkDetector.vcxproj -> D:\op_New\oPF_3_6\x64\Release\LandmarkDetector.lib
+  0 File(s) copied
+  0 File(s) copied

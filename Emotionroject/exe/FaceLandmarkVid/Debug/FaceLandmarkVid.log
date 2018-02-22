@@ -1,0 +1,13 @@
+﻿  0 File(s) copied
+  FaceLandmarkVid.cpp
+  FaceLandmarkVid.vcxproj -> C:\Users\Nastya\Pictures\учеба 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\Debug\FaceLandmarkVid.exe
+  0 File(s) copied
+  The system cannot find the path specified.
+  The system cannot execute the specified program.
+  'E' is not recognized as an internal or external command,
+  operable program or batch file.
+C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppCommon.targets(133,5): error MSB3073: выход из команды "xcopy /I /E /Y /D /C "C:\Users\Nastya\Pictures\учеба 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\3rdParty\OpenCV3.1\x86\v140\bin\opencv_world310.dll" "C:\Users\Nastya\Pictures\учеба 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\Debug\"
+C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppCommon.targets(133,5): error MSB3073: xcopy /I /E /Y /D /C "C:\Users\Nastya\Pictures\учеба 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\3rdParty\OpenCV3.1\bin\opencv_ffmpeg310.dll" "C:\Users\Nastya\Pictures\учеба 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\Debug\"
+C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppCommon.targets(133,5): error MSB3073: xcopy /I /E /Y /D /C "C:\Users\Nastya\Pictures\учеба 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\3rdParty\OpenCV3.1\bin\opencv_ffmpeg310_64.dll" "C:\Users\Nastya\Pictures\учеба 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\Debug\"
+C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppCommon.targets(133,5): error MSB3073: xcopy /I /E /Y /D /C "C:\Users\Nastya\Pictures\учеба 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\3rdParty\OpenCV3.1\classifiers" "C:\Users\Nastya\Pictures\учеба 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\Debug\classifiers"
+C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppCommon.targets(133,5): error MSB3073: :VCEnd" с кодом 9009.

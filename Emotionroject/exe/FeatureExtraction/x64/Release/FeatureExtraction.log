@@ -1,0 +1,35 @@
+﻿  0 File(s) copied
+  FeatureExtraction.cpp
+FeatureExtraction.cpp(455): warning C4101: bytes_recv: неиспользованная локальная переменная
+FeatureExtraction.cpp(411): warning C4101: client_name: неиспользованная локальная переменная
+C:\Users\Nastya\Documents\VisualStudia_Ust\VC\include\utility(158): warning C4267: инициализация: преобразование из "size_t" в "unsigned long"; возможна потеря данных
+  d:\op_new\opf_3_6\lib\3rdparty\dlib\include\dlib\image_processing/shape_predictor.h(710): note: см. ссылку на создание экземпляров функции шаблон при компиляции "std::pair<unsigned long,unsigned long>::pair<int,unsigned __int64,void>(std::pair<int,unsigned __int64> &&) noexcept"
+  d:\op_new\opf_3_6\lib\3rdparty\dlib\include\dlib\image_processing/shape_predictor.h(710): note: см. ссылку на создание экземпляров функции шаблон при компиляции "std::pair<unsigned long,unsigned long>::pair<int,unsigned __int64,void>(std::pair<int,unsigned __int64> &&) noexcept"
+C:\Users\Nastya\Documents\VisualStudia_Ust\VC\include\numeric(20): warning C4244: =: преобразование "double" в "int", возможна потеря данных
+  C:\Users\Nastya\Documents\VisualStudia_Ust\VC\include\numeric(30): note: см. ссылку на создание экземпляров функции шаблон при компиляции "_Ty std::_Accumulate<double*,_Ty,_Fn2>(_InIt,_InIt,_Ty,_Fn2)"
+          with
+          [
+              _Ty=int,
+              _Fn2=std::plus<void>,
+              _InIt=double *
+          ]
+  C:\Users\Nastya\Documents\VisualStudia_Ust\VC\include\numeric(38): note: см. ссылку на создание экземпляров функции шаблон при компиляции "_Ty std::accumulate<_InIt,_Ty,std::plus<void>>(_InIt,_InIt,_Ty,_Fn2)"
+          with
+          [
+              _Ty=int,
+              _InIt=std::_Vector_iterator<std::_Vector_val<std::_Simple_types<double>>>,
+              _Fn2=std::plus<void>
+          ]
+  FeatureExtraction.cpp(1345): note: см. ссылку на создание экземпляров функции шаблон при компиляции "_Ty std::accumulate<std::_Vector_iterator<std::_Vector_val<std::_Simple_types<double>>>,int>(_InIt,_InIt,_Ty)"
+          with
+          [
+              _Ty=int,
+              _InIt=std::_Vector_iterator<std::_Vector_val<std::_Simple_types<double>>>
+          ]
+  Создание кода
+  Создание кода завершено
+  FeatureExtraction.vcxproj -> D:\op_New\oPF_3_6\x64\Release\FeatureExtraction.exe
+  0 File(s) copied
+  0 File(s) copied
+  0 File(s) copied
+  0 File(s) copied

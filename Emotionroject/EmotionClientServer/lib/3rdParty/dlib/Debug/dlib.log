@@ -1,0 +1,6 @@
+﻿  C:\Users\Nastya\Pictures\�祡� 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\3rdParty\tbb\bin\x86\v140\tbb_debug.dll
+  1 File(s) copied
+  source.cpp
+c:\users\nastya\pictures\учеба 10\githab2\openface-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\3rdparty\dlib\include\dlib\all\../threads/threaded_object_extension.cpp(32): warning C4297: dlib::threaded_object::~threaded_object: ожидается, что функция не будет выдавать исключения, но она это делает
+  c:\users\nastya\pictures\учеба 10\githab2\openface-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\3rdparty\dlib\include\dlib\all\../threads/threaded_object_extension.cpp(32): note: деструктор или метод отмены выделения имеет (возможно, неявно) спецификацию, не предусматривающую создание исключений
+  dlib.vcxproj -> C:\Users\Nastya\Pictures\учеба 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\Debug\dlib.lib

@@ -1,0 +1,71 @@
+﻿  0 File(s) copied
+  stdafx.cpp
+  CCNF_patch_expert.cpp
+  LandmarkDetectorModel.cpp
+  LandmarkDetectorFunc.cpp
+  LandmarkDetectorParameters.cpp
+  LandmarkDetectorUtils.cpp
+  LandmarkDetectionValidator.cpp
+  Patch_experts.cpp
+  PAW.cpp
+  PDM.cpp
+  SVR_patch_expert.cpp
+  LandmarkDetector.vcxproj -> C:\Users\Nastya\Pictures\учеба 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\Release\LandmarkDetector.lib
+  C:\Users\Nastya\Pictures\�祡� 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\LandmarkDetector\model\clm-z.txt
+  C:\Users\Nastya\Pictures\�祡� 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\LandmarkDetector\model\clm_general.txt
+  C:\Users\Nastya\Pictures\�祡� 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\LandmarkDetector\model\clm_wild.txt
+  C:\Users\Nastya\Pictures\�祡� 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\LandmarkDetector\model\clnf_general.txt
+  C:\Users\Nastya\Pictures\�祡� 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\LandmarkDetector\model\clnf_wild.txt
+  C:\Users\Nastya\Pictures\�祡� 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\LandmarkDetector\model\haarAlign.txt
+  C:\Users\Nastya\Pictures\�祡� 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\LandmarkDetector\model\main_clm-z.txt
+  C:\Users\Nastya\Pictures\�祡� 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\LandmarkDetector\model\main_clm_general.txt
+  C:\Users\Nastya\Pictures\�祡� 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\LandmarkDetector\model\main_clm_wild.txt
+  C:\Users\Nastya\Pictures\�祡� 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\LandmarkDetector\model\main_clnf_general.txt
+  C:\Users\Nastya\Pictures\�祡� 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\LandmarkDetector\model\main_clnf_wild.txt
+  C:\Users\Nastya\Pictures\�祡� 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\LandmarkDetector\model\tris_66.txt
+  C:\Users\Nastya\Pictures\�祡� 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\LandmarkDetector\model\tris_68.txt
+  C:\Users\Nastya\Pictures\�祡� 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\LandmarkDetector\model\tris_68_full.txt
+  C:\Users\Nastya\Pictures\�祡� 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\LandmarkDetector\model\detection_validation\validator_general_66.txt
+  C:\Users\Nastya\Pictures\�祡� 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\LandmarkDetector\model\detection_validation\validator_general_68.txt
+  C:\Users\Nastya\Pictures\�祡� 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\LandmarkDetector\model\model_eye\clnf_left_synth.txt
+  C:\Users\Nastya\Pictures\�祡� 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\LandmarkDetector\model\model_eye\clnf_right_synth.txt
+  C:\Users\Nastya\Pictures\�祡� 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\LandmarkDetector\model\model_eye\main_clnf_synth_left.txt
+  C:\Users\Nastya\Pictures\�祡� 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\LandmarkDetector\model\model_eye\main_clnf_synth_right.txt
+  C:\Users\Nastya\Pictures\�祡� 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\LandmarkDetector\model\model_eye\patch_experts\ccnf_patches_1.00_synth_lid_.txt
+  C:\Users\Nastya\Pictures\�祡� 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\LandmarkDetector\model\model_eye\patch_experts\ccnf_patches_1.50_synth_lid_.txt
+  C:\Users\Nastya\Pictures\�祡� 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\LandmarkDetector\model\model_eye\patch_experts\left_ccnf_patches_1.00_synth_lid_.txt
+  C:\Users\Nastya\Pictures\�祡� 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\LandmarkDetector\model\model_eye\patch_experts\left_ccnf_patches_1.50_synth_lid_.txt
+  C:\Users\Nastya\Pictures\�祡� 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\LandmarkDetector\model\model_eye\pdms\pdm_28_eye_3D_closed.txt
+  C:\Users\Nastya\Pictures\�祡� 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\LandmarkDetector\model\model_eye\pdms\pdm_28_l_eye_3D_closed.txt
+  C:\Users\Nastya\Pictures\�祡� 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\LandmarkDetector\model\model_inner\clnf_inner.txt
+  C:\Users\Nastya\Pictures\�祡� 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\LandmarkDetector\model\model_inner\main_clnf_inner.txt
+  C:\Users\Nastya\Pictures\�祡� 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\LandmarkDetector\model\model_inner\patch_experts\ccnf_patches_1.00_inner.txt
+  C:\Users\Nastya\Pictures\�祡� 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\LandmarkDetector\model\model_inner\pdms\pdm_51_inner.txt
+  C:\Users\Nastya\Pictures\�祡� 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\LandmarkDetector\model\patch_experts\ccnf_patches_0.25_general.txt
+  C:\Users\Nastya\Pictures\�祡� 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\LandmarkDetector\model\patch_experts\ccnf_patches_0.25_wild.txt
+  C:\Users\Nastya\Pictures\�祡� 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\LandmarkDetector\model\patch_experts\ccnf_patches_0.35_general.txt
+  C:\Users\Nastya\Pictures\�祡� 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\LandmarkDetector\model\patch_experts\ccnf_patches_0.35_wild.txt
+  C:\Users\Nastya\Pictures\�祡� 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\LandmarkDetector\model\patch_experts\ccnf_patches_0.5_general.txt
+  C:\Users\Nastya\Pictures\�祡� 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\LandmarkDetector\model\patch_experts\ccnf_patches_0.5_wild.txt
+  C:\Users\Nastya\Pictures\�祡� 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\LandmarkDetector\model\patch_experts\ccnf_patches_1_wild.txt
+  C:\Users\Nastya\Pictures\�祡� 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\LandmarkDetector\model\patch_experts\depth_patches_0.25.txt
+  C:\Users\Nastya\Pictures\�祡� 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\LandmarkDetector\model\patch_experts\depth_patches_0.35.txt
+  C:\Users\Nastya\Pictures\�祡� 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\LandmarkDetector\model\patch_experts\depth_patches_0.5.txt
+  C:\Users\Nastya\Pictures\�祡� 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\LandmarkDetector\model\patch_experts\intensity_patches_0.25.txt
+  C:\Users\Nastya\Pictures\�祡� 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\LandmarkDetector\model\patch_experts\intensity_patches_0.35.txt
+  C:\Users\Nastya\Pictures\�祡� 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\LandmarkDetector\model\patch_experts\intensity_patches_0.5.txt
+  C:\Users\Nastya\Pictures\�祡� 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\LandmarkDetector\model\patch_experts\svr_patches_0.25_general.txt
+  C:\Users\Nastya\Pictures\�祡� 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\LandmarkDetector\model\patch_experts\svr_patches_0.25_wild.txt
+  C:\Users\Nastya\Pictures\�祡� 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\LandmarkDetector\model\patch_experts\svr_patches_0.35_general.txt
+  C:\Users\Nastya\Pictures\�祡� 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\LandmarkDetector\model\patch_experts\svr_patches_0.35_wild.txt
+  C:\Users\Nastya\Pictures\�祡� 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\LandmarkDetector\model\patch_experts\svr_patches_0.5_general.txt
+  C:\Users\Nastya\Pictures\�祡� 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\LandmarkDetector\model\patch_experts\svr_patches_0.5_wild.txt
+  C:\Users\Nastya\Pictures\�祡� 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\LandmarkDetector\model\pdms\In-the-wild_aligned_PDM_68.txt
+  C:\Users\Nastya\Pictures\�祡� 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\LandmarkDetector\model\pdms\Multi-PIE_aligned_PDM_66.txt
+  C:\Users\Nastya\Pictures\�祡� 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\LandmarkDetector\model\pdms\Multi-PIE_aligned_PDM_68.txt
+  52 File(s) copied
+  'E' is not recognized as an internal or external command,
+  operable program or batch file.
+C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppCommon.targets(133,5): error MSB3073: выход из команды "xcopy /I /E /Y /D "C:\Users\Nastya\Pictures\учеба 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\LandmarkDetector\model" "C:\Users\Nastya\Pictures\учеба 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\Release\model"
+C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppCommon.targets(133,5): error MSB3073: xcopy /I /E /Y /D "C:\Users\Nastya\Pictures\учеба 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\3rdParty\OpenCV3.1\classifiers" "C:\Users\Nastya\Pictures\учеба 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\Release\classifiers"
+C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppCommon.targets(133,5): error MSB3073: :VCEnd" с кодом 9009.

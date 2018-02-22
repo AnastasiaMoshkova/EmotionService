@@ -1,0 +1,351 @@
+/*
+void outputAllF(const FaceAnalysis::FaceAnalyser& face_analyser, cv::Mat& captured_image, std::vector<string> &vec)
+{
+	std::cout << "function AU" << std::endl;
+	std::vector<string> vect;
+
+	string an, an2, bb, cc;
+	string zz1, zz2;
+	vector<double> aa;
+
+
+		auto aus_reg = face_analyser.GetCurrentAUsReg();
+
+		vector<string> au_reg_names = face_analyser.GetAURegNames();
+		std::sort(au_reg_names.begin(), au_reg_names.end());
+
+		// write out ar the correct index
+		for (string au_name : au_reg_names)
+		{
+			for (auto au_reg : aus_reg)
+			{
+				if (au_name.compare(au_reg.first) == 0)
+				{
+					if (au_reg.second < 0)
+					{
+						au_reg.second = 0;
+					}
+					aa.push_back(au_reg.second);
+					//*output_file << ", " << au_reg.second;
+					std::cout << au_reg.second << std::endl;
+
+					break;
+				}
+			}
+		}
+
+
+
+		auto aus_class = face_analyser.GetCurrentAUsClass();
+
+		vector<string> au_class_names = face_analyser.GetAUClassNames();
+		std::sort(au_class_names.begin(), au_class_names.end());
+
+		// write out ar the correct index
+		for (string au_name : au_class_names)
+		{
+			for (auto au_class : aus_class)
+			{
+				if (au_name.compare(au_class.first) == 0)
+				{
+					aa.push_back(au_class.second);
+					//*output_file << ", " << au_class.second;
+					break;
+				}
+			}
+		}
+		std::cout << aa.size() << std::endl;
+		for (int i = 0; i < aa.size(); i++)
+		{
+			std::cout << aa[i] << std::endl;
+		}
+
+	
+		std::cout << "function AU_2" << std::endl;
+	/////////////////////////
+	vector<double> e1, e2, e3, e4, e5, e6;
+	//e1[0]=(aa[0]*aa[17]+aa[1]*aa[18]+aa[3]*aa[20]+)
+	double AU01_c = aa[0], AU02_c = aa[1], AU04_c = aa[2], AU05_c = aa[3], AU06_c = aa[4], AU07_c = aa[5], AU09_c = aa[6],
+		AU10_c = aa[7], AU12_c = aa[8], AU14_c = aa[9], AU15_c = aa[10], AU17_c = aa[11], AU20_c = aa[12], AU23_c = aa[13],
+		AU25_c = aa[14], AU26_c = aa[15], AU45_c = aa[16];
+	double AU01_r = aa[17], AU02_r = aa[18], AU04_r = aa[19], AU05_r = aa[20], AU06_r = aa[21], AU07_r = aa[22], AU09_r = aa[23],
+		AU10_r = aa[24], AU12_r = aa[25], AU14_r = aa[26], AU15_r = aa[27], AU17_r = aa[28], AU20_r = aa[29], AU23_r = aa[30],
+		AU25_r = aa[31], AU26_r = aa[32], AU28_r = aa[33], AU45_r = aa[34];
+
+	//удивление
+	e1.push_back((AU01_c*AU01_r + AU02_c*AU02_r + AU05_c*AU05_r + AU26_c*AU26_r) / 4);
+	//E(i, 2) = (AU01_c(i)*AU01_r(i) + AU02_c(i)*AU02_r(i) + AU05_c(i)*AU05_r(i) + AU27_c(i)*AU27_r(i)) / 4;
+	e1.push_back((AU01_c*AU01_r + AU02_c*AU02_r + AU05_c*AU05_r) / 3);
+	e1.push_back((AU01_c*AU01_r + AU02_c*AU02_r + AU26_c*AU26_r) / 3);
+	//%E(i, 5) = (AU01_c(i)*AU01_r(i) + AU02_c(i)*AU02_r(i) + AU27_c(i)*AU27_r(i)) / 3;
+	e1.push_back((AU05_c*AU05_r + AU26_c*AU26_r) / 2);
+	//%E1(i, 7) = (AU26_c(i)*AU26_r(i));
+
+
+	//%страх
+	//%E2(i, 8) = (AU01_c(i)*AU01_r(i) + AU02_c(i)*AU02_r(i) + AU04_c(i)*AU04_r(i) + AU05_c(i)*AU05_r(i) + AU20_c(i)*AU20_r(i) + AU25_c(i)*AU25_r(i) + AU26_c(i)*AU26_r(i)) / 7;
+	//%E(i, 9) = (AU01_c(i)*AU01_r(i) + AU02_c(i)*AU02_r(i) + AU04_c(i)*AU04_r(i) + AU05_c(i)*AU05_r(i) + AU20_c(i)*AU20_r(i) + AU25_c(i)*AU25_r(i) + AU27_c(i)*AU27_r(i)) / 7;
+	e2.push_back((AU01_c*AU01_r + AU02_c*AU02_r + AU04_c*AU04_r + AU05_c*AU05_r + AU25_c*AU25_r + AU26_c*AU26_r) / 6);
+	//%E(i, 11) = (AU01_c(i)*AU01_r(i) + AU02_c(i)*AU02_r(i) + AU04_c(i)*AU04_r(i) + AU05_c(i)*AU05_r(i) + AU25_c(i)*AU25_r(i) + AU27_c(i)*AU27_r(i)) / 6;
+	e2.push_back((AU01_c*AU01_r + AU02_c*AU02_r + AU04_c*AU04_r + AU05_c*AU05_r) / 4);
+	e2.push_back((AU01_c*AU01_r + AU02_c*AU02_r + AU05_c*AU05_r + AU25_c*AU25_r) / 4);
+	e2.push_back((AU01_c*AU01_r + AU02_c*AU02_r + AU05_c*AU05_r + AU25_c*AU25_r + AU26_c*AU26_r) / 5);
+	//%E(i, 15) = (AU01_c(i)*AU01_r(i) + AU02_c(i)*AU02_r(i) + AU05_c(i)*AU05_r(i) + AU25_c(i)*AU25_r(i) + AU26_c(i)*AU26_r(i) + AU27_c(i)*AU27_r(i)) / 6;
+	e2.push_back((AU01_c*AU01_r + AU02_c*AU02_r + AU05_c*AU05_r + AU26_c*AU26_r) / 4);
+	//%E(i, 17) = (AU01_c(i)*AU01_r(i) + AU02_c(i)*AU02_r(i) + AU05_c(i)*AU05_r(i) + AU27_c(i)*AU27_r(i)) / 4;
+	e2.push_back((AU01_c*AU01_r + AU02_c*AU02_r + AU05_c*AU05_r) / 3);
+	e2.push_back((AU05_c*AU05_r + AU20_c*AU20_r + AU25_c*AU25_r) / 3);
+	e2.push_back((AU05_c*AU05_r + AU20_c*AU20_r + AU25_c*AU25_r + AU26_c*AU26_r) / 4);
+	//%E(i, 21) = (AU05_c(i)*AU05_r(i) + AU20_c(i)*AU20_r(i) + AU25_c(i)*AU25_r(i) + AU26_c(i)*AU26_r(i) + AU27_c(i)*AU27_r(i)) / 5;
+	e2.push_back((AU05_c*AU05_r + AU20_c*AU20_r + AU26_c*AU26_r) / 3);
+	//%E(i, 23) = (AU05_c(i)*AU05_r(i) + AU20_c(i)*AU20_r(i) + AU27_c(i)*AU27_r(i)) / 3;
+	e2.push_back((AU05_c*AU05_r + AU20_c*AU20_r) / 2);
+	//%радость
+	e3.push_back((AU06_c*AU06_r + AU12_c*AU12_r) / 2);
+	e3.push_back((AU12_c*AU12_r));
+	//%ечаль
+	//%E(i, 27) = (AU01_c(i)*AU01_r(i) + AU04_c(i)*AU04_r(i) + AU11_c(i)*AU11_r(i) + AU15_c(i)*AU15_r(i)) / 4;
+	e4.push_back((AU01_c*AU01_r + AU04_c*AU04_r + AU15_c*AU15_r) / 3);
+	e4.push_back((AU06_c*AU06_r + AU15_c*AU15_r) / 2);
+	//%E(i, 30) = (AU01_c(i)*AU01_r(i) + AU04_c(i)*AU04_r(i) + AU11_c(i)*AU11_r(i)) / 3;
+	e4.push_back((AU01_c*AU01_r + AU04_c*AU04_r + AU15_c*AU15_r + AU17_c*AU17_r) / 4);
+	//%E(i, 32) = (AU15_c(i)*AU15_r(i));
+	//%E(i, 33) = (AU11_c(i)*AU11_r(i) + AU17_c(i)*AU17_r(i)) / 2;
+	//%отвращение
+	e5.push_back((AU09_c*AU09_r));
+	//%E(i, 35) = (AU09_c(i)*AU09_r(i) + AU16_c(i)*AU16_r(i) + AU15_c(i)*AU15_r(i)) / 3;
+	//%E(i, 36) = (AU09_c(i)*AU09_r(i) + AU16_c(i)*AU16_r(i) + AU26_c(i)*AU26_r(i)) / 3;
+	e5.push_back((AU09_c*AU09_r + AU17_c*AU17_r) / 2);
+	e5.push_back((AU10_c*AU10_r));
+	//%E(i, 39) = (AU10_c(i)*AU10_r(i) + AU16_c(i)*AU16_r(i) + AU25_c(i)*AU25_r(i)) / 3;
+	//%E(i, 40) = (AU10_c(i)*AU10_r(i) + AU16_c(i)*AU16_r(i) + AU26_c(i)*AU26_r(i)) / 3;
+	e5.push_back((AU10_c*AU10_r + AU17_c*AU17_r) / 2);
+	//%гнев
+	//%E(i, 42) = (AU04_c(i)*AU04_r(i) + AU05_c(i)*AU05_r(i) + AU07_c(i)*AU07_r(i) + AU10_c(i)*AU10_r(i) + AU22_c(i)*AU22_r(i) + AU23_c(i)*AU23_r(i) + AU25_c(i)*AU25_r(i)) / 7;
+	//%E(i, 43) = (AU04_c(i)*AU04_r(i) + AU05_c(i)*AU05_r(i) + AU07_c(i)*AU07_r(i) + AU10_c(i)*AU10_r(i) + AU22_c(i)*AU22_r(i) + AU23_c(i)*AU23_r(i) + AU26_c(i)*AU26_r(i)) / 7;
+	e6.push_back((AU04_c*AU04_r + AU05_c*AU05_r + AU07_c*AU07_r + AU10_c*AU10_r + AU23_c*AU23_r + AU25_c*AU25_r) / 6);
+	e6.push_back((AU04_c*AU04_r + AU05_c*AU05_r + AU07_c*AU07_r + AU10_c*AU10_r + AU23_c*AU23_r + AU26_c*AU26_r) / 6);
+	e6.push_back((AU04_c*AU04_r + AU05_c*AU05_r + AU07_c*AU07_r + AU23_c*AU23_r + AU25_c*AU25_r) / 5);
+	e6.push_back((AU04_c*AU04_r + AU05_c*AU05_r + AU07_c*AU07_r + AU23_c*AU23_r + AU26_c*AU26_r) / 5);
+	e6.push_back((AU04_c*AU04_r + AU05_c*AU05_r + AU07_c*AU07_r + AU17_c*AU17_r + AU23_c*AU23_r) / 5);
+	//%E(i, 49) = (AU04_c(i)*AU04_r(i) + AU05_c(i)*AU05_r(i) + AU07_c(i)*AU07_r(i) + AU17_c(i)*AU17_r(i) + AU24_c(i)*AU24_r(i)) / 5;
+	e6.push_back((AU04_c*AU04_r + AU05_c*AU05_r + AU07_c*AU07_r + AU23_c*AU23_r) / 4);
+	//%E(i, 51) = (AU04_c(i)*AU04_r(i) + AU05_c(i)*AU05_r(i) + AU07_c(i)*AU07_r(i) + AU24_c(i)*AU24_r(i)) / 4;
+
+	//%E(i, 52) = (AU05_c(i)*AU05_r(i) + AU07_c(i)*AU07_r(i) + AU10_c(i)*AU10_r(i) + AU22_c(i)*AU22_r(i) + AU23_c(i)*AU23_r(i) + AU25_c(i)*AU25_r(i)) / 6;
+	//%E(i, 53) = (AU05_c(i)*AU05_r(i) + AU07_c(i)*AU07_r(i) + AU10_c(i)*AU10_r(i) + AU22_c(i)*AU22_r(i) + AU23_c(i)*AU23_r(i) + AU26_c(i)*AU26_r(i)) / 6;
+	e6.push_back((AU05_c*AU05_r + AU07_c*AU07_r + AU10_c*AU10_r + AU23_c*AU23_r + AU25_c*AU25_r) / 5);
+	e6.push_back((AU05_c*AU05_r + AU07_c*AU07_r + AU10_c*AU10_r + AU23_c*AU23_r + AU26_c*AU26_r) / 5);
+	e6.push_back((AU05_c*AU05_r + AU07_c*AU07_r + AU23_c*AU23_r + AU25_c*AU25_r) / 4);
+	e6.push_back((AU05_c*AU05_r + AU07_c*AU07_r + AU23_c*AU23_r + AU26_c*AU26_r) / 4);
+	e6.push_back((AU05_c*AU05_r + AU07_c*AU07_r + AU17_c*AU17_r + AU23_c*AU23_r) / 4);
+	//%E(i, 59) = (AU05_c(i)*AU05_r(i) + AU07_c(i)*AU07_r(i) + AU17_c(i)*AU17_r(i) + AU24_c(i)*AU24_r(i)) / 4;
+	e6.push_back((AU05_c*AU05_r + AU07_c*AU07_r + AU23_c*AU23_r) / 3);
+	//%E(i, 61) = (AU05_c(i)*AU05_r(i) + AU07_c(i)*AU07_r(i) + AU24_c(i)*AU24_r(i)) / 3;
+
+	//%E(i, 62) = (AU04_c(i)*AU04_r(i) + AU07_c(i)*AU07_r(i) + AU10_c(i)*AU10_r(i) + AU22_c(i)*AU22_r(i) + AU23_c(i)*AU23_r(i) + AU25_c(i)*AU25_r(i)) / 6;
+	//%E(i, 63) = (AU04_c(i)*AU04_r(i) + AU07_c(i)*AU07_r(i) + AU10_c(i)*AU10_r(i) + AU22_c(i)*AU22_r(i) + AU23_c(i)*AU23_r(i) + AU26_c(i)*AU26_r(i)) / 6;
+	e6.push_back((AU04_c*AU04_r + AU07_c*AU07_r + AU10_c*AU10_r + AU23_c*AU23_r + AU25_c*AU25_r) / 5);
+	e6.push_back((AU04_c*AU04_r + AU07_c*AU07_r + AU10_c*AU10_r + AU23_c*AU23_r + AU26_c*AU26_r) / 5);
+	e6.push_back((AU04_c*AU04_r + AU07_c*AU07_r + AU23_c*AU23_r + AU25_c*AU25_r) / 4);
+	e6.push_back((AU04_c*AU04_r + AU07_c*AU07_r + AU23_c*AU23_r + AU26_c*AU26_r) / 4);
+	e6.push_back((AU04_c*AU04_r + AU07_c*AU07_r + AU17_c*AU17_r + AU23_c*AU23_r) / 4);
+	//%E(i, 69) = (AU04_c(i)*AU04_r(i) + AU07_c(i)*AU07_r(i) + AU17_c(i)*AU17_r(i) + AU24_c(i)*AU24_r(i)) / 4;
+	e6.push_back((AU04_c*AU04_r + AU07_c*AU07_r + AU23_c*AU23_r) / 3);
+	//%E(i, 71) = (AU04_c(i)*AU04_r(i) + AU07_c(i)*AU07_r(i) + AU24_c(i)*AU24_r(i)) / 3;
+
+	//%E(i, 72) = (AU04_c(i)*AU04_r(i) + AU05_c(i)*AU05_r(i) + AU10_c(i)*AU10_r(i) + AU22_c(i)*AU22_r(i) + AU23_c(i)*AU23_r(i) + AU25_c(i)*AU25_r(i)) / 6;
+	//%E(i, 73) = (AU04_c(i)*AU04_r(i) + AU05_c(i)*AU05_r(i) + AU10_c(i)*AU10_r(i) + AU22_c(i)*AU22_r(i) + AU23_c(i)*AU23_r(i) + AU26_c(i)*AU26_r(i)) / 6;
+	e6.push_back((AU04_c*AU04_r + AU05_c*AU05_r + AU10_c*AU10_r + AU23_c*AU23_r + AU25_c*AU25_r) / 5);
+	e6.push_back((AU04_c*AU04_r + AU05_c*AU05_r + AU10_c*AU10_r + AU23_c*AU23_r + AU26_c*AU26_r) / 5);
+	e6.push_back((AU04_c*AU04_r + AU05_c*AU05_r + AU23_c*AU23_r + AU25_c*AU25_r) / 4);
+	e6.push_back((AU04_c*AU04_r + AU05_c*AU05_r + AU23_c*AU23_r + AU26_c*AU26_r) / 4);
+	e6.push_back((AU04_c*AU04_r + AU05_c*AU05_r + AU17_c*AU17_r + AU23_c*AU23_r) / 4);
+	//%E(i, 79) = (AU04_c(i)*AU04_r(i) + AU05_c(i)*AU05_r(i) + AU17_c(i)*AU17_r(i) + AU24_c(i)*AU24_r(i)) / 4;
+	e6.push_back((AU04_c*AU04_r + AU05_c*AU05_r + AU23_c*AU23_r) / 3);
+	//%E(i, 81) = (AU04_c(i)*AU04_r(i) + AU05_c(i)*AU05_r(i) + AU24_c(i)*AU24_r(i)) / 3;
+
+	//%E(i, 82) = (AU04_c(i)*AU04_r(i) + AU05_c(i)*AU05_r(i) + AU07_c(i)*AU07_r(i) + AU22_c(i)*AU22_r(i) + AU23_c(i)*AU23_r(i) + AU25_c(i)*AU25_r(i)) / 6;
+	//%E(i, 83) = (AU04_c(i)*AU04_r(i) + AU05_c(i)*AU05_r(i) + AU07_c(i)*AU07_r(i) + AU22_c(i)*AU22_r(i) + AU23_c(i)*AU23_r(i) + AU26_c(i)*AU26_r(i)) / 6;
+	e6.push_back((AU04_c*AU04_r + AU05_c*AU05_r + AU07_c*AU07_r + AU23_c*AU23_r + AU25_c*AU25_r) / 5);
+	e6.push_back((AU04_c*AU04_r + AU05_c*AU05_r + AU07_c*AU07_r + AU23_c*AU23_r + AU26_c*AU26_r) / 5);
+
+	/*std::vector<int>::iterator r1;
+	r1 = std::max_element(e1.begin(), e1.end());
+	std::cout << "max element at: " << std::distance(e1.begin(), r1) << '\n';
+	//std::cout << r1 << std::endl;
+	*/
+
+
+
+	std::vector<double>::iterator result1;
+	result1 = std::max_element(e1.begin(), e1.end());
+	int r1 = std::distance(e1.begin(), result1);
+
+	std::vector<double>::iterator result2;
+	result2 = std::max_element(e2.begin(), e2.end());
+	int r2 = std::distance(e2.begin(), result2);
+
+	std::vector<double>::iterator result3;
+	result3 = std::max_element(e3.begin(), e3.end());
+	int r3 = std::distance(e3.begin(), result3);
+
+	std::vector<double>::iterator result4;
+	result4 = std::max_element(e4.begin(), e4.end());
+	int r4 = std::distance(e4.begin(), result4);
+
+	std::vector<double>::iterator result5;
+	result5 = std::max_element(e5.begin(), e5.end());
+	int r5 = std::distance(e5.begin(), result5);
+
+	std::vector<double>::iterator result6;
+	result6 = std::max_element(e6.begin(), e6.end());
+	int r6 = std::distance(e6.begin(), result6);
+
+	std::vector<double> em;
+	em.push_back(e1[r1]);
+	em.push_back(e2[r2]);
+	em.push_back(e3[r3]);
+	em.push_back(e4[r4]);
+	em.push_back(e5[r5]);
+	em.push_back(e6[r6]);
+	std::cout << "function AU_3" << std::endl;
+
+	for (int i = 0; i < em.size(); i++)
+	{
+		std::cout << em[i] << std::endl;
+	}
+
+	std::vector<double>::iterator result;
+	result = std::max_element(em.begin(), em.end());
+	int r = std::distance(em.begin(), result);
+
+	double a = em[r];
+
+	//std::cout << "max element at: " << r << '\n';
+	//std::cout << "max element: " << a << '\n';
+	double sum_of_elems = std::accumulate(em.begin(), em.end(), 0);
+
+	string strr, strr2;
+	if (sum_of_elems == 0)
+	{
+		//*output_file << " " << "neutral 100%";
+
+		strr = "neutral";
+
+	}
+
+	//double s = (a / sum_of_elems)*100;
+	else
+	{
+
+		if (r == 0)
+		{
+			//*output_file << " " << "surprise";
+			strr = "surprise";
+		}
+		if (r == 1)
+		{
+			//*output_file << " " << "fear";
+			strr = "fear";
+		}
+		if (r == 2)
+		{
+			//*output_file << " " << "happiness";
+			strr = "happiness";
+		}
+		if (r == 3)
+		{
+			//*output_file << " " << "sad";
+			strr = "sad";
+		}
+		if (r == 4)
+		{
+			//*output_file << " " << "disgust";
+			strr = "disgust";
+		}
+		if (r == 5)
+		{
+			//*output_file << " " << "anger";
+			strr = "anger";
+		}
+		/*	cv::putText(captured_image,
+		strr,
+		cv::Point(20, 20), // Coordinates
+		cv::FONT_HERSHEY_COMPLEX_SMALL, // Font
+		1.0, // Scale. 2.0 = 2x bigger
+		cv::Scalar(255, 255, 255), // Color
+		1, // Thickness
+		CV_AA);
+		*/
+		em[r] = 0;
+		std::vector<double>::iterator result7;
+		result7 = std::max_element(em.begin(), em.end());
+		int r7 = std::distance(em.begin(), result7);
+		double a2 = em[r7];
+		if (r7 == 0)
+		{
+			//*output_file << " " << "surprise";
+			strr2 = "surprise";
+		}
+		if (r7 == 1)
+		{
+			//*output_file << " " << "fear";
+			strr2 = "fear";
+		}
+		if (r7 == 2)
+		{
+			//*output_file << " " << "happiness";
+			strr2 = "happiness";
+		}
+		if (r7 == 3)
+		{
+			//*output_file << " " << "sad";
+			strr2 = "sad";
+		}
+		if (r7 == 4)
+		{
+			//*output_file << " " << "disgust";
+			strr2 = "disgust";
+		}
+		if (r7 == 5)
+		{
+			//*output_file << " " << "anger";
+			strr2 = "anger";
+		}
+
+		double sum = a + a2;
+		double z1 = (a / sum) * 100;
+		double z2 = (a2 / sum) * 100;
+		//*output_file << " " << z1 << "%";
+		//*output_file << " " << z2 << "%";
+
+
+		zz1 = to_string(z1) + "%";
+
+		zz2 = to_string(z2) + "%";
+		/*cv::putText(captured_image,
+		"TEEEEEEEEEEEEEEEXT",
+		cv::Point(5, 5), // Coordinates
+		cv::FONT_HERSHEY_COMPLEX_SMALL, // Font
+		1.0, // Scale. 2.0 = 2x bigger
+		cv::Scalar(255, 255, 255), // Color
+		1, // Thickness
+		CV_AA);
+		*/
+
+	}
+	aa.clear();
+	//outfile << endl;
+	//*output_file << endl;
+	//string a="Here is some text";
+
+	vect.push_back(strr);
+	vect.push_back(strr2);
+	vect.push_back(zz1);
+	vect.push_back(zz2);
+
+	return vec.swap(vect);
+
+
+}

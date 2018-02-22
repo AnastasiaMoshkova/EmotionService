@@ -1,0 +1,8 @@
+﻿  0 File(s) copied
+  LandmarkDetector.vcxproj -> C:\Users\Nastya\Pictures\учеба 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\Debug\LandmarkDetector.lib
+  0 File(s) copied
+  'E' is not recognized as an internal or external command,
+  operable program or batch file.
+C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppCommon.targets(133,5): error MSB3073: выход из команды "xcopy /I /E /Y /D "C:\Users\Nastya\Pictures\учеба 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\LandmarkDetector\model" "C:\Users\Nastya\Pictures\учеба 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\Debug\model"
+C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppCommon.targets(133,5): error MSB3073: xcopy /I /E /Y /D "C:\Users\Nastya\Pictures\учеба 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\3rdParty\OpenCV3.1\classifiers" "C:\Users\Nastya\Pictures\учеба 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\Debug\classifiers"
+C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppCommon.targets(133,5): error MSB3073: :VCEnd" с кодом 9009.

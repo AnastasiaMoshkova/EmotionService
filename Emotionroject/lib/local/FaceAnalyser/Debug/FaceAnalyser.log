@@ -1,0 +1,102 @@
+﻿  0 File(s) copied
+cl : командная строка warning D9030: "/Gm" несовместим с многопроцессорной обработкой; ключ /MP игнорируется
+  Face_utils.cpp
+  FaceAnalyser.cpp
+c:\users\nastya\documents\visualstudia_ust\vc\include\xutility(2229): warning C4996: 'std::_Copy_impl': Function call with parameters that may be unsafe - this call relies on the caller to check that the passed values are correct. To disable this warning, use -D_SCL_SECURE_NO_WARNINGS. See documentation on how to use Visual C++ 'Checked Iterators'
+  c:\users\nastya\documents\visualstudia_ust\vc\include\xutility(2216): note:  см. объявление "std::_Copy_impl"
+  c:\users\nastya\pictures\учеба 10\githab2\openface-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\3rdparty\boost\boost\algorithm\string\detail\classification.hpp(102): note: см. ссылку на создание экземпляров функции шаблон при компиляции "_OutIt std::copy<const char*,char*>(_InIt,_InIt,_OutIt)"
+          with
+          [
+              _OutIt=char *,
+              _InIt=const char *
+          ]
+  c:\users\nastya\pictures\учеба 10\githab2\openface-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\3rdparty\boost\boost\algorithm\string\classification.hpp(206): note: см. ссылку на создание экземпляров функции шаблон при компиляции "boost::algorithm::detail::is_any_ofF<char>::is_any_ofF<boost::iterator_range<const char *>>(const RangeT &)"
+          with
+          [
+              RangeT=boost::iterator_range<const char *>
+          ]
+  c:\users\nastya\pictures\учеба 10\githab2\openface-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\3rdparty\boost\boost\algorithm\string\classification.hpp(206): note: см. ссылку на создание экземпляров функции шаблон при компиляции "boost::algorithm::detail::is_any_ofF<char>::is_any_ofF<boost::iterator_range<const char *>>(const RangeT &)"
+          with
+          [
+              RangeT=boost::iterator_range<const char *>
+          ]
+  c:\users\nastya\pictures\учеба 10\githab2\openface-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\faceanalyser\src\faceanalyser.cpp(1174): note: см. ссылку на создание экземпляров функции шаблон при компиляции "boost::algorithm::detail::is_any_ofF<char> boost::algorithm::is_any_of<char[2]>(const RangeT (&))"
+          with
+          [
+              RangeT=char [2]
+          ]
+  SVR_static_lin_regressors.cpp
+  SVR_dynamic_lin_regressors.cpp
+  SVM_static_lin.cpp
+  SVM_dynamic_lin.cpp
+  GazeEstimation.cpp
+  Создание кода...
+  C:\Users\Nastya\Pictures\�祡� 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\FaceAnalyser\AU_predictors\AU_all_best.txt
+  C:\Users\Nastya\Pictures\�祡� 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\FaceAnalyser\AU_predictors\AU_all_static.txt
+  C:\Users\Nastya\Pictures\�祡� 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\FaceAnalyser\AU_predictors\svm_combined\AU_10_dynamic.dat
+  C:\Users\Nastya\Pictures\�祡� 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\FaceAnalyser\AU_predictors\svm_combined\AU_10_static.dat
+  C:\Users\Nastya\Pictures\�祡� 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\FaceAnalyser\AU_predictors\svm_combined\AU_12_dynamic.dat
+  C:\Users\Nastya\Pictures\�祡� 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\FaceAnalyser\AU_predictors\svm_combined\AU_12_static.dat
+  C:\Users\Nastya\Pictures\�祡� 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\FaceAnalyser\AU_predictors\svm_combined\AU_14_dynamic.dat
+  C:\Users\Nastya\Pictures\�祡� 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\FaceAnalyser\AU_predictors\svm_combined\AU_14_static.dat
+  C:\Users\Nastya\Pictures\�祡� 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\FaceAnalyser\AU_predictors\svm_combined\AU_15_dynamic.dat
+  C:\Users\Nastya\Pictures\�祡� 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\FaceAnalyser\AU_predictors\svm_combined\AU_15_static.dat
+  C:\Users\Nastya\Pictures\�祡� 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\FaceAnalyser\AU_predictors\svm_combined\AU_17_dynamic.dat
+  C:\Users\Nastya\Pictures\�祡� 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\FaceAnalyser\AU_predictors\svm_combined\AU_17_static.dat
+  C:\Users\Nastya\Pictures\�祡� 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\FaceAnalyser\AU_predictors\svm_combined\AU_1_dynamic.dat
+  C:\Users\Nastya\Pictures\�祡� 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\FaceAnalyser\AU_predictors\svm_combined\AU_1_static.dat
+  C:\Users\Nastya\Pictures\�祡� 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\FaceAnalyser\AU_predictors\svm_combined\AU_20_dynamic.dat
+  C:\Users\Nastya\Pictures\�祡� 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\FaceAnalyser\AU_predictors\svm_combined\AU_20_static.dat
+  C:\Users\Nastya\Pictures\�祡� 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\FaceAnalyser\AU_predictors\svm_combined\AU_23_dynamic.dat
+  C:\Users\Nastya\Pictures\�祡� 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\FaceAnalyser\AU_predictors\svm_combined\AU_23_static.dat
+  C:\Users\Nastya\Pictures\�祡� 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\FaceAnalyser\AU_predictors\svm_combined\AU_25_dynamic.dat
+  C:\Users\Nastya\Pictures\�祡� 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\FaceAnalyser\AU_predictors\svm_combined\AU_25_static.dat
+  C:\Users\Nastya\Pictures\�祡� 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\FaceAnalyser\AU_predictors\svm_combined\AU_26_dynamic.dat
+  C:\Users\Nastya\Pictures\�祡� 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\FaceAnalyser\AU_predictors\svm_combined\AU_26_static.dat
+  C:\Users\Nastya\Pictures\�祡� 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\FaceAnalyser\AU_predictors\svm_combined\AU_28_dynamic.dat
+  C:\Users\Nastya\Pictures\�祡� 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\FaceAnalyser\AU_predictors\svm_combined\AU_28_static.dat
+  C:\Users\Nastya\Pictures\�祡� 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\FaceAnalyser\AU_predictors\svm_combined\AU_2_dynamic.dat
+  C:\Users\Nastya\Pictures\�祡� 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\FaceAnalyser\AU_predictors\svm_combined\AU_2_static.dat
+  C:\Users\Nastya\Pictures\�祡� 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\FaceAnalyser\AU_predictors\svm_combined\AU_45_dynamic.dat
+  C:\Users\Nastya\Pictures\�祡� 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\FaceAnalyser\AU_predictors\svm_combined\AU_45_static.dat
+  C:\Users\Nastya\Pictures\�祡� 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\FaceAnalyser\AU_predictors\svm_combined\AU_4_dynamic.dat
+  C:\Users\Nastya\Pictures\�祡� 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\FaceAnalyser\AU_predictors\svm_combined\AU_4_static.dat
+  C:\Users\Nastya\Pictures\�祡� 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\FaceAnalyser\AU_predictors\svm_combined\AU_5_dynamic.dat
+  C:\Users\Nastya\Pictures\�祡� 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\FaceAnalyser\AU_predictors\svm_combined\AU_5_static.dat
+  C:\Users\Nastya\Pictures\�祡� 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\FaceAnalyser\AU_predictors\svm_combined\AU_6_dynamic.dat
+  C:\Users\Nastya\Pictures\�祡� 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\FaceAnalyser\AU_predictors\svm_combined\AU_6_static.dat
+  C:\Users\Nastya\Pictures\�祡� 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\FaceAnalyser\AU_predictors\svm_combined\AU_7_dynamic.dat
+  C:\Users\Nastya\Pictures\�祡� 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\FaceAnalyser\AU_predictors\svm_combined\AU_7_static.dat
+  C:\Users\Nastya\Pictures\�祡� 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\FaceAnalyser\AU_predictors\svm_combined\AU_9_dynamic.dat
+  C:\Users\Nastya\Pictures\�祡� 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\FaceAnalyser\AU_predictors\svm_combined\AU_9_static.dat
+  C:\Users\Nastya\Pictures\�祡� 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\FaceAnalyser\AU_predictors\svr_combined\AU_10_static_intensity_comb.dat
+  C:\Users\Nastya\Pictures\�祡� 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\FaceAnalyser\AU_predictors\svr_combined\AU_12_static_intensity_comb.dat
+  C:\Users\Nastya\Pictures\�祡� 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\FaceAnalyser\AU_predictors\svr_combined\AU_14_static_intensity.dat
+  C:\Users\Nastya\Pictures\�祡� 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\FaceAnalyser\AU_predictors\svr_combined\AU_15_dynamic_intensity_comb.dat
+  C:\Users\Nastya\Pictures\�祡� 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\FaceAnalyser\AU_predictors\svr_combined\AU_15_static_intensity_comb.dat
+  C:\Users\Nastya\Pictures\�祡� 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\FaceAnalyser\AU_predictors\svr_combined\AU_17_dynamic_intensity_comb.dat
+  C:\Users\Nastya\Pictures\�祡� 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\FaceAnalyser\AU_predictors\svr_combined\AU_17_static_intensity_comb.dat
+  C:\Users\Nastya\Pictures\�祡� 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\FaceAnalyser\AU_predictors\svr_combined\AU_1_dynamic_intensity_comb.dat
+  C:\Users\Nastya\Pictures\�祡� 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\FaceAnalyser\AU_predictors\svr_combined\AU_1_static_intensity.dat
+  C:\Users\Nastya\Pictures\�祡� 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\FaceAnalyser\AU_predictors\svr_combined\AU_20_dynamic_intensity.dat
+  C:\Users\Nastya\Pictures\�祡� 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\FaceAnalyser\AU_predictors\svr_combined\AU_20_static_intensity.dat
+  C:\Users\Nastya\Pictures\�祡� 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\FaceAnalyser\AU_predictors\svr_combined\AU_23_dynamic_intensity_comb.dat
+  C:\Users\Nastya\Pictures\�祡� 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\FaceAnalyser\AU_predictors\svr_combined\AU_23_static_intensity_comb.dat
+  C:\Users\Nastya\Pictures\�祡� 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\FaceAnalyser\AU_predictors\svr_combined\AU_25_dynamic_intensity_comb.dat
+  C:\Users\Nastya\Pictures\�祡� 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\FaceAnalyser\AU_predictors\svr_combined\AU_25_static_intensity.dat
+  C:\Users\Nastya\Pictures\�祡� 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\FaceAnalyser\AU_predictors\svr_combined\AU_26_dynamic_intensity_comb.dat
+  C:\Users\Nastya\Pictures\�祡� 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\FaceAnalyser\AU_predictors\svr_combined\AU_26_static_intensity_comb.dat
+  C:\Users\Nastya\Pictures\�祡� 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\FaceAnalyser\AU_predictors\svr_combined\AU_2_dynamic_intensity_comb.dat
+  C:\Users\Nastya\Pictures\�祡� 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\FaceAnalyser\AU_predictors\svr_combined\AU_2_static_intensity_comb.dat
+  C:\Users\Nastya\Pictures\�祡� 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\FaceAnalyser\AU_predictors\svr_combined\AU_45_dynamic_intensity_comb.dat
+  C:\Users\Nastya\Pictures\�祡� 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\FaceAnalyser\AU_predictors\svr_combined\AU_45_static_intensity_comb.dat
+  C:\Users\Nastya\Pictures\�祡� 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\FaceAnalyser\AU_predictors\svr_combined\AU_4_static_intensity_comb.dat
+  C:\Users\Nastya\Pictures\�祡� 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\FaceAnalyser\AU_predictors\svr_combined\AU_5_dynamic_intensity.dat
+  C:\Users\Nastya\Pictures\�祡� 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\FaceAnalyser\AU_predictors\svr_combined\AU_5_static_intensity.dat
+  C:\Users\Nastya\Pictures\�祡� 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\FaceAnalyser\AU_predictors\svr_combined\AU_6_static_intensity_comb.dat
+  C:\Users\Nastya\Pictures\�祡� 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\FaceAnalyser\AU_predictors\svr_combined\AU_7_static_intensity_comb.dat
+  C:\Users\Nastya\Pictures\�祡� 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\FaceAnalyser\AU_predictors\svr_combined\AU_9_dynamic_intensity.dat
+  C:\Users\Nastya\Pictures\�祡� 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\lib\local\FaceAnalyser\AU_predictors\svr_combined\AU_9_static_intensity.dat
+  66 File(s) copied
+  FaceAnalyser.vcxproj -> C:\Users\Nastya\Pictures\учеба 10\githab2\OpenFace-c1ff40399e931568f597bdeeef318a3815ebbbc0\Debug\FaceAnalyser.lib
+  0 File(s) copied

@@ -1,0 +1,12 @@
+﻿  0 File(s) copied
+  FaceLandmarkImg.cpp
+C:\Users\Nastya\Documents\VisualStudia_Ust\VC\include\utility(158): warning C4267: инициализация: преобразование из "size_t" в "unsigned long"; возможна потеря данных
+  d:\op_new\opf_3_3\lib\3rdparty\dlib\include\dlib\image_processing/shape_predictor.h(710): note: см. ссылку на создание экземпляров функции шаблон при компиляции "std::pair<unsigned long,unsigned long>::pair<int,unsigned __int64,void>(std::pair<int,unsigned __int64> &&) noexcept"
+  d:\op_new\opf_3_3\lib\3rdparty\dlib\include\dlib\image_processing/shape_predictor.h(710): note: см. ссылку на создание экземпляров функции шаблон при компиляции "std::pair<unsigned long,unsigned long>::pair<int,unsigned __int64,void>(std::pair<int,unsigned __int64> &&) noexcept"
+  Создание кода
+  Создание кода завершено
+  FaceLandmarkImg.vcxproj -> D:\op_New\oPF_3_3\x64\Release\FaceLandmarkImg.exe
+  0 File(s) copied
+  0 File(s) copied
+  0 File(s) copied
+  0 File(s) copied
